@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: reference-aws-support.html 
 keywords: aws, amazon, s3, support, regions, storage classes, cloud tiering, tiering, bluexp, netapp 
-summary: NetApp Cloud Tiering은 여러 S3 스토리지 클래스와 대부분의 지역을 지원합니다. 
+summary: NetApp Cloud Tiering 여러 S3 스토리지 클래스와 대부분의 지역을 지원합니다. 
 ---
-= NetApp Cloud Tiering에 지원되는 S3 스토리지 클래스 및 지역
+= NetApp Cloud Tiering 에 지원되는 S3 스토리지 클래스 및 지역
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: NetApp Cloud Tiering은 여러 S3 스토리지 클래스와 대부분�
 
 
 [role="lead"]
-NetApp Cloud Tiering은 여러 S3 스토리지 클래스와 대부분의 지역을 지원합니다.
+NetApp Cloud Tiering 여러 S3 스토리지 클래스와 대부분의 지역을 지원합니다.
 
 
 
@@ -32,7 +32,7 @@ NetApp Cloud Tiering은 여러 S3 스토리지 클래스와 대부분의 지역�
 
 Cloud Tiering 수명 주기 규칙을 구성하는 경우 AWS 계정에서 버킷을 설정할 때 어떤 수명 주기 규칙도 구성해서는 안 됩니다.
 
-https://aws.amazon.com/s3/storage-classes/["S3 스토리지 클래스에 대해 알아보세요"^] .
+https://aws.amazon.com/s3/storage-classes/["S3 스토리지 클래스에 대해 알아보세요"^].
 
 
 

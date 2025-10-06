@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: task-managing-object-storage.html 
 keywords: object storage, mirror object storage, create object storage, remove object storage, swap object storage, display object storage, license 
-summary: 온프레미스 ONTAP 클러스터를 구성하여 특정 개체 스토리지에 데이터를 계층화한 후 NetApp Cloud Tiering에서 추가 개체 스토리지 작업을 수행할 수 있습니다.  새로운 개체 스토리지를 추가하고, 계층화된 데이터를 보조 개체 스토리지로 미러링하고, 기본 개체 스토리지와 미러 개체 스토리지를 교체하고, 집계에서 미러링된 개체 저장소를 제거하는 등의 작업이 가능합니다. 
+summary: 온프레미스 ONTAP 클러스터를 구성하여 특정 개체 스토리지에 데이터를 계층화한 후 NetApp Cloud Tiering 에서 추가 개체 스토리지 작업을 수행할 수 있습니다.  새로운 개체 스토리지를 추가하고, 계층화된 데이터를 보조 개체 스토리지로 미러링하고, 기본 개체 스토리지와 미러 개체 스토리지를 교체하고, 집계에서 미러링된 개체 저장소를 제거하는 등의 작업이 가능합니다. 
 ---
-= NetApp Cloud Tiering에서 데이터 계층화에 사용되는 개체 스토리지 관리
+= NetApp Cloud Tiering 에서 데이터 계층화에 사용되는 개체 스토리지 관리
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: 온프레미스 ONTAP 클러스터를 구성하여 특정 개체 스토
 
 
 [role="lead"]
-온프레미스 ONTAP 클러스터를 구성하여 특정 개체 스토리지에 데이터를 계층화한 후 NetApp Cloud Tiering을 사용하여 추가 개체 스토리지 작업을 수행할 수 있습니다.  새로운 개체 스토리지를 추가하고, 계층화된 데이터를 보조 개체 스토리지로 미러링하고, 기본 개체 스토리지와 미러 개체 스토리지를 교체하고, 집계에서 미러링된 개체 저장소를 제거하는 등의 작업이 가능합니다.
+온프레미스 ONTAP 클러스터를 구성하여 특정 개체 스토리지에 데이터를 계층화한 후 NetApp Cloud Tiering 사용하여 추가 개체 스토리지 작업을 수행할 수 있습니다.  새로운 개체 스토리지를 추가하고, 계층화된 데이터를 보조 개체 스토리지로 미러링하고, 기본 개체 스토리지와 미러 개체 스토리지를 교체하고, 집계에서 미러링된 개체 저장소를 제거하는 등의 작업이 가능합니다.
 
 
 
@@ -162,7 +162,7 @@ NOTE: MetroCluster 구성에서 미러 개체 저장소를 제거할 때 기본 
 클라우드 티어링을 사용하면 계층화된 데이터를 다른 클라우드 공급자로 쉽게 마이그레이션할 수 있습니다.  예를 들어 Amazon S3에서 Azure Blob으로 이동하려면 위에 나열된 단계를 순서대로 따르면 됩니다.
 
 . Azure Blob 개체 저장소를 추가합니다.
-. 이 새로운 객체 저장소를 기존 집계에 미러로 연결합니다.
+. 이 새로운 객체 저장소를 기존 집계에 대한 미러로 연결합니다.
 . 기본 및 미러 개체 저장소를 바꿉니다.
 . Amazon S3 객체 저장소의 미러링을 해제합니다.
 

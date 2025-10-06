@@ -1,15 +1,15 @@
 ---
 indexpage:
-  title: NetApp 클라우드 계층화 설명서
-  summary: NetApp Cloud Tiering은 온프레미스 ONTAP 클러스터에서 비활성 데이터를 개체 스토리지로 자동 계층화하여 데이터
+  title: NetApp Cloud Tiering 설명서
+  summary: NetApp Cloud Tiering 온프레미스 ONTAP 클러스터에서 비활성 데이터를 개체 스토리지로 자동 계층화하여 데이터
     센터를 클라우드로 확장합니다.
   keywords: bluexp, ontap, cloud tiering, documentation, netapp console, console
-  lead: NetApp Cloud Tiering은 온프레미스 ONTAP 클러스터에서 비활성 데이터를 개체 스토리지로 자동 계층화하여 데이터 센터를
+  lead: NetApp Cloud Tiering 온프레미스 ONTAP 클러스터에서 비활성 데이터를 개체 스토리지로 자동 계층화하여 데이터 센터를
     클라우드로 확장합니다.
   tiles:
   - title: 시작하기
     links:
-    - title: NetApp 클라우드 계층화에 대해 알아보세요
+    - title: NetApp Cloud Tiering 에 대해 알아보세요
       url: concept-cloud-tiering.html
     - title: 새로운 소식
       url: whats-new.html
@@ -53,9 +53,9 @@ indexpage:
       url: task-managing-object-storage.html#removing-a-mirror-object-store-from-an-aggregate
   - title: 블로그 및 커뮤니티
     links:
-    - title: NetApp 콘솔
+    - title: NetApp Console
       url: https://www.netapp.com/console
-    - title: NetApp 데이터 서비스
+    - title: NetApp Data Services
       url: https://www.netapp.com/data-services/
     - title: NetApp 커뮤니티
       url: https://community.netapp.com/

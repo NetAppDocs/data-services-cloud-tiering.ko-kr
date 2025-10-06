@@ -4,7 +4,7 @@ permalink: task-tiering-test.html
 keywords: throughput, latency, tiering performance, cloud performance test, tiering test, object storage performance 
 summary: 데이터 계층화를 설정하기 전과 후에 ONTAP 클러스터에서 개체 저장소로의 네트워크 지연 시간과 처리량 성능을 측정하기 위해 클라우드 성능 테스트를 실행합니다. 
 ---
-= NetApp Cloud Tiering에서 네트워크 지연 시간 및 처리량 성능 측정
+= NetApp Cloud Tiering 에서 네트워크 지연 시간 및 처리량 성능 측정
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: 데이터 계층화를 설정하기 전과 후에 ONTAP 클러스터에
 
 
 [role="lead"]
-NetApp Cloud Tiering에서 데이터 계층화를 설정하기 전과 후에 ONTAP 클러스터에서 개체 저장소로의 네트워크 지연 시간과 처리량 성능을 측정하기 위해 클라우드 성능 테스트를 실행합니다.  이 테스트를 통해 발생한 모든 실패도 식별됩니다.
+NetApp Cloud Tiering 에서 데이터 계층화를 설정하기 전과 후에 ONTAP 클러스터에서 개체 저장소로의 네트워크 지연 시간과 처리량 성능을 측정하기 위해 클라우드 성능 테스트를 실행합니다.  이 테스트를 통해 발생한 모든 실패도 식별됩니다.
 
 다음은 성능 결과의 예입니다.
 

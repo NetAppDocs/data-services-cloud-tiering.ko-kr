@@ -4,7 +4,7 @@ permalink: concept-cloud-tiering.html
 keywords: cloud tiering, overview, conceptual, value, features, cost, charging, tiering policies, cooling period, fabricpool, netapp console, console, bluexp 
 summary: NetApp의 클라우드 계층화 서비스는 온프레미스 ONTAP 클러스터에서 비활성 데이터를 자동으로 계층화하여 데이터 센터를 클라우드로 확장합니다.  이렇게 하면 애플리케이션 계층을 변경하지 않고도 클러스터에서 귀중한 공간을 확보하여 더 많은 작업 부하를 처리할 수 있습니다.  클라우드 티어링을 사용하면 데이터 센터 비용을 절감하고 CAPEX 모델에서 OPEX 모델로 전환할 수 있습니다. 
 ---
-= NetApp 클라우드 계층화에 대해 알아보세요
+= NetApp Cloud Tiering 에 대해 알아보세요
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,27 +14,27 @@ summary: NetApp의 클라우드 계층화 서비스는 온프레미스 ONTAP 클
 
 
 [role="lead"]
-NetApp Cloud Tiering은 온프레미스 ONTAP 클러스터에서 비활성 데이터를 개체 스토리지로 자동 계층화하여 데이터 센터를 클라우드로 확장합니다.  이렇게 하면 애플리케이션 계층을 변경하지 않고도 클러스터에서 귀중한 공간을 확보하여 더 많은 작업 부하를 처리할 수 있습니다.  클라우드 티어링을 사용하면 데이터 센터 비용을 절감하고 CAPEX 모델에서 OPEX 모델로 전환할 수 있습니다.
+NetApp Cloud Tiering 온프레미스 ONTAP 클러스터에서 비활성 데이터를 개체 스토리지로 자동 계층화하여 데이터 센터를 클라우드로 확장합니다.  이렇게 하면 애플리케이션 계층을 변경하지 않고도 클러스터에서 귀중한 공간을 확보하여 더 많은 작업 부하를 처리할 수 있습니다.  클라우드 티어링을 사용하면 데이터 센터 비용을 절감하고 CAPEX 모델에서 OPEX 모델로 전환할 수 있습니다.
 
 클라우드 티어링은 _FabricPool_의 기능을 활용합니다.  FabricPool 은 저렴한 객체 스토리지에 데이터를 자동으로 계층화할 수 있는 NetApp Data Fabric 기술입니다.  활성(핫) 데이터는 로컬 계층(온프레미스 ONTAP 집계)에 남아 있는 반면, 비활성(콜드) 데이터는 클라우드 계층으로 이동합니다. 이 모든 과정에서 ONTAP 데이터 효율성이 유지됩니다.
 
-원래 모든 SSD 집계를 갖춘 AFF, FAS 및 ONTAP Select 시스템에서 지원되었으며 ONTAP 9.8부터 고성능 SSD 외에도 HDD로 구성된 집계에서 데이터를 계층화할 수 있습니다. 보다 https://docs.netapp.com/us-en/ontap/fabricpool/requirements-concept.html["FabricPool 사용에 대한 고려 사항 및 요구 사항"^] 자세한 내용은.
+원래 모든 SSD 집계를 갖춘 AFF, FAS 및 ONTAP Select 시스템에서 지원되었으며 ONTAP 9.8부터 고성능 SSD 외에도 HDD로 구성된 집계에서 데이터를 계층화할 수 있습니다.  보다 https://docs.netapp.com/us-en/ontap/fabricpool/requirements-concept.html["FabricPool 사용에 대한 고려 사항 및 요구 사항"^] 자세한 내용은.
 
 FabricPool Mirror를 사용하여 단일 노드 클러스터, HA 구성 클러스터, Tiering Mirror 구성의 클러스터 및 MetroCluster 구성에 대한 계층화를 구성할 수 있습니다.  클라우드 티어링 라이선스는 모든 클러스터에서 공유됩니다.
 
-https://bluexp.netapp.com/cloud-tiering-service-tco["클라우드 계층화 TCO 계산기를 사용하여 얼마나 많은 비용을 절감할 수 있는지 확인하세요."^] .
+https://bluexp.netapp.com/cloud-tiering-service-tco["클라우드 계층화 TCO 계산기를 사용하여 얼마나 많은 비용을 절감할 수 있는지 확인하세요."^].
 
 
 
-== NetApp 콘솔
+== NetApp Console
 
-NetApp Cloud Tiering은 NetApp 콘솔을 통해 접근할 수 있습니다.
+NetApp Cloud Tiering NetApp Console 통해 접근할 수 있습니다.
 
-NetApp 콘솔은 기업 규모로 온프레미스 및 클라우드 환경 전반에서 NetApp 스토리지 및 데이터 서비스를 중앙에서 관리할 수 있는 기능을 제공합니다. NetApp 데이터 서비스에 액세스하고 사용하려면 콘솔이 필요합니다. 관리 인터페이스로서, 하나의 인터페이스에서 여러 스토리지 리소스를 관리할 수 있습니다. 콘솔 관리자는 기업 내 모든 시스템의 저장소와 서비스에 대한 액세스를 제어할 수 있습니다.
+NetApp Console 기업 규모로 온프레미스 및 클라우드 환경 전반에서 NetApp 스토리지 및 데이터 서비스를 중앙에서 관리할 수 있는 기능을 제공합니다. NetApp 데이터 서비스에 액세스하고 사용하려면 콘솔이 필요합니다. 관리 인터페이스로서, 하나의 인터페이스에서 여러 스토리지 리소스를 관리할 수 있습니다. 콘솔 관리자는 기업 내 모든 시스템의 저장소와 서비스에 대한 액세스를 제어할 수 있습니다.
 
-NetApp 콘솔을 사용하려면 라이선스나 구독이 필요하지 않으며, 스토리지 시스템이나 NetApp 데이터 서비스에 대한 연결을 보장하기 위해 클라우드에 콘솔 에이전트를 배포해야 할 때만 요금이 부과됩니다. 그러나 콘솔에서 액세스할 수 있는 일부 NetApp 데이터 서비스는 라이선스 기반이거나 구독 기반입니다.
+NetApp Console 사용하려면 라이선스나 구독이 필요하지 않으며, 스토리지 시스템이나 NetApp 데이터 서비스에 대한 연결을 보장하기 위해 클라우드에 콘솔 에이전트를 배포해야 할 때만 요금이 부과됩니다. 그러나 콘솔에서 액세스할 수 있는 일부 NetApp 데이터 서비스는 라이선스 기반이거나 구독 기반입니다.
 
-자세히 알아보세요 https://docs.netapp.com/us-en/bluexp-setup-admin/concept-overview.html["NetApp 콘솔"] .
+자세히 알아보세요 https://docs.netapp.com/us-en/bluexp-setup-admin/concept-overview.html["NetApp Console"] .
 
 
 
@@ -52,10 +52,10 @@ NetApp 콘솔을 사용하려면 라이선스나 구독이 필요하지 않으�
 * Cloud Volumes ONTAP 시스템이 있는 경우 클러스터 페이지에서 해당 시스템을 찾을 수 있으며, 이를 통해 하이브리드 클라우드 인프라의 데이터 계층화를 전체적으로 볼 수 있습니다.
 
 
-Cloud Tiering이 제공하는 가치에 대한 자세한 내용은 다음과 같습니다. https://bluexp.netapp.com/cloud-tiering["NetApp 콘솔 웹사이트에서 클라우드 계층화 페이지를 확인하세요."^] .
+Cloud Tiering이 제공하는 가치에 대한 자세한 내용은 다음과 같습니다. https://bluexp.netapp.com/cloud-tiering["NetApp Console 웹사이트에서 클라우드 계층화 페이지를 확인하세요."^] .
 
 
-TIP: Cloud Volumes ONTAP 시스템은 Cloud Tiering에서 읽기 전용입니다. https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-tiering.html["NetApp 콘솔에서 Cloud Volumes ONTAP 시스템에 대한 계층화를 설정합니다."^] .
+TIP: Cloud Volumes ONTAP 시스템은 Cloud Tiering에서 읽기 전용입니다. https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-tiering.html["NetApp Console 에서 Cloud Volumes ONTAP 시스템에 대한 계층화를 설정합니다."^] .
 
 
 
@@ -89,7 +89,7 @@ ONTAP 클러스터는 비활성 데이터를 단일 개체 저장소 또는 여�
 클라우드 티어링은 비활성 데이터에 대해 클라우드 공급자의 기본 스토리지 클래스/액세스 계층을 사용합니다.  하지만 수명 주기 규칙을 적용하면 특정 기간이 지나면 데이터가 기본 저장소 클래스에서 다른 저장소 클래스로 자동 전환됩니다.  이렇게 하면 활용도가 낮은 데이터를 비용이 덜 드는 저장소로 옮겨 비용을 절감하는 데 도움이 될 수 있습니다.
 
 
-NOTE: StorageGRID 또는 S3 호환 스토리지에 계층화된 데이터에 대해서는 수명 주기 규칙을 선택할 수 없습니다.
+NOTE: StorageGRID 또는 S3 호환 스토리지에 계층화된 데이터의 경우 수명 주기 규칙을 선택할 수 없습니다.
 
 
 
@@ -99,7 +99,7 @@ NOTE: StorageGRID 또는 S3 호환 스토리지에 계층화된 데이터에 대
 
 StorageGRID 에 데이터를 계층화할 때 비용이 청구되지 않습니다.  BYOL 라이센스나 PAYGO 등록은 필요하지 않습니다.
 
-https://bluexp.netapp.com/pricing#tiering["가격 세부 정보 보기"^] .
+https://bluexp.netapp.com/pricing#tiering["가격 세부 정보 보기"^].
 
 클라우드 티어링은 소스 볼륨의 스토리지 효율성을 보존하므로 ONTAP 효율성(중복 제거 및 압축이 적용된 후 더 적은 양의 데이터에 대한 비용) 이후에 계층화된 데이터에 대해 클라우드 공급자 개체 스토리지 비용을 지불합니다.
 
@@ -117,7 +117,7 @@ https://bluexp.netapp.com/pricing#tiering["가격 세부 정보 보기"^] .
 
 클라우드 티어링은 사용량에 따라 비용을 지불하는 모델로 소비 기반 라이선스를 제공합니다.  클라우드 공급업체의 마켓플레이스를 통해 구독한 후, 계층화된 데이터에 대해 GB당 요금을 지불합니다. 선불금은 없습니다.  귀하는 월별 청구서를 통해 클라우드 제공자로부터 요금을 청구받습니다.
 
-무료 체험판이 있거나 자체 라이선스를 가져오는 경우(BYOL)에도 구독해야 합니다.
+무료 평가판이 있거나 자체 라이선스를 가져오는 경우(BYOL)에도 구독해야 합니다.
 
 * 구독하면 무료 체험 기간이 종료된 후에도 서비스가 중단되지 않습니다.
 +
@@ -131,7 +131,7 @@ https://bluexp.netapp.com/pricing#tiering["가격 세부 정보 보기"^] .
 
 무료 평가판 기간 동안 또는 Cloud Tiering BYOL 라이선스를 초과하지 않은 경우, 종량제 구독 요금이 청구되지 않습니다.
 
-link:task-licensing-cloud-tiering.html#use-a-bluexp-tiering-paygo-subscription["사용량에 따른 요금제 구독을 설정하는 방법을 알아보세요"] .
+link:task-licensing-cloud-tiering.html#use-a-bluexp-tiering-paygo-subscription["사용량에 따른 요금제 구독을 설정하는 방법을 알아보세요"].
 
 
 
@@ -147,7 +147,7 @@ Cloud Tiering은 비활성 데이터를 Amazon S3 또는 Azure로 계층화할 �
 
 NetApp 에서 *클라우드 계층화* 라이선스(이전에는 "클라우드 계층화" 라이선스라고 함)를 구매하여 자체 라이선스를 가져오세요.  1년, 2년 또는 3년 기간의 라이선스를 구매하고 원하는 만큼의 계층화 용량을 지정할 수 있습니다(최소 10TiB부터 시작).  BYOL 클라우드 티어링 라이선스는 여러 온프레미스 ONTAP 클러스터에서 사용할 수 있는 _플로팅_ 라이선스입니다.  Cloud Tiering 라이선스에 정의한 총 계층화 용량은 모든 온프레미스 클러스터에서 사용할 수 있습니다.
 
-클라우드 계층화 라이선스를 구매한 후에는 NetApp 콘솔에 라이선스를 추가해야 합니다. link:task-licensing-cloud-tiering.html#use-a-bluexp-tiering-byol-license["Cloud Tiering BYOL 라이선스를 사용하는 방법을 알아보세요."] .
+클라우드 계층화 라이선스를 구매한 후에는 NetApp Console 에 라이선스를 추가해야 합니다. link:task-licensing-cloud-tiering.html#use-a-bluexp-tiering-byol-license["Cloud Tiering BYOL 라이선스를 사용하는 방법을 알아보세요."] .
 
 위에서 언급한 대로 BYOL 라이선스를 구매한 경우에도 사용량에 따라 요금을 지불하는 구독을 설정하는 것이 좋습니다.
 
@@ -166,12 +166,12 @@ image:diagram_cloud_tiering.png["클라우드 공급자의 콘솔 에이전트�
 
 높은 수준에서 클라우드 티어링은 다음과 같이 작동합니다.
 
-. NetApp 콘솔에서 온프레미스 클러스터를 검색할 수 있습니다.
+. NetApp Console 에서 온프레미스 클러스터를 검색할 수 있습니다.
 . 버킷/컨테이너, 스토리지 클래스 또는 액세스 계층, 계층화된 데이터의 수명 주기 규칙을 포함하여 개체 스토리지에 대한 세부 정보를 제공하여 계층화를 설정합니다.
 . 콘솔은 ONTAP 구성하여 개체 스토리지 공급자를 사용하고 클러스터에서 활성 및 비활성 데이터의 양을 파악합니다.
 . 계층화할 볼륨과 해당 볼륨에 적용할 계층화 정책을 선택합니다.
 . ONTAP 데이터가 비활성으로 간주되는 임계값에 도달하자마자 비활성 데이터를 개체 저장소로 계층화하기 시작합니다(참조).<<볼륨 티어링 정책>> ).
-. 계층화된 데이터에 수명 주기 규칙을 적용한 경우(일부 공급업체에서만 사용 가능), 오래된 계층화된 데이터는 특정 일수 후에 비용 효율적인 계층에 할당됩니다.
+. 계층화된 데이터에 수명 주기 규칙을 적용한 경우(일부 공급업체에서만 사용 가능), 특정 기간이 지난 이전 계층화된 데이터는 더 비용 효율적인 계층에 할당됩니다.
 
 
 
@@ -180,7 +180,7 @@ image:diagram_cloud_tiering.png["클라우드 공급자의 콘솔 에이전트�
 
 계층화하려는 볼륨을 선택하면 각 볼륨에 적용할 _볼륨 계층화 정책_을 선택합니다.  계층화 정책은 볼륨의 사용자 데이터 블록을 클라우드로 이동할지 여부나 시기를 결정합니다.
 
-*냉각 기간*도 조정할 수 있습니다.  이는 볼륨의 사용자 데이터가 "콜드" 상태로 간주되어 개체 스토리지로 이동되기 전에 비활성 상태로 유지되어야 하는 일수입니다.  냉각 기간을 조정할 수 있는 계층화 정책의 경우 유효한 값은 다음과 같습니다.
+*냉각 기간*도 조절할 수 있습니다.  이는 볼륨의 사용자 데이터가 "콜드" 상태로 간주되어 개체 스토리지로 이동되기 전에 비활성 상태로 유지되어야 하는 일수입니다.  냉각 기간을 조정할 수 있는 계층화 정책의 경우 유효한 값은 다음과 같습니다.
 
 * ONTAP 9.8 이상 사용 시 2~183일
 * 이전 ONTAP 버전의 경우 2~63일
@@ -188,7 +188,7 @@ image:diagram_cloud_tiering.png["클라우드 공급자의 콘솔 에이전트�
 
 2~63이 권장되는 모범 사례입니다.
 
-정책 없음(없음):: 성능 계층의 볼륨에 데이터를 보관하여 클라우드 계층으로 이동되는 것을 방지합니다.
+정책 없음(없음):: 데이터를 성능 계층의 볼륨에 보관하여 클라우드 계층으로 이동하지 못하도록 방지합니다.
 콜드 스냅샷(스냅샷만 해당):: ONTAP 계층은 활성 파일 시스템과 공유되지 않는 볼륨의 콜드 스냅샷 블록을 개체 스토리지로 계층화합니다.  읽을 경우, 클라우드 계층의 콜드 데이터 블록이 핫 데이터 블록이 되어 성능 계층으로 이동됩니다.
 +
 --
@@ -216,10 +216,10 @@ NOTE: 재가열된 데이터는 공간이 있는 경우에만 성능 계층에 �
 
 
 --
-모든 사용자 데이터(All):: 모든 데이터(메타데이터 제외)는 즉시 콜드 데이터로 표시되고 가능한 한 빨리 개체 스토리지에 계층화됩니다.  볼륨의 새로운 블록이 차가워질 때까지 48시간을 기다릴 필요가 없습니다.  모든 정책이 설정되기 전 볼륨에 위치한 블록은 차가워지는 데 48시간이 필요합니다.
+모든 사용자 데이터(All):: 모든 데이터(메타데이터 제외)는 즉시 콜드 데이터로 표시되고 가능한 한 빨리 개체 스토리지에 계층화됩니다. 볼륨의 새로운 블록이 차가워질 때까지 48시간을 기다릴 필요가 없습니다. 모든 정책이 설정되기 전 볼륨에 위치한 블록은 차가워지는 데 48시간이 필요합니다.
 +
 --
-읽을 경우, 클라우드 계층의 콜드 데이터 블록은 콜드 상태로 유지되며 성능 계층에 다시 기록되지 않습니다.  이 정책은 ONTAP 9.6부터 사용할 수 있습니다.
+읽을 경우, 클라우드 계층의 콜드 데이터 블록은 콜드 상태로 유지되며 성능 계층에 다시 기록되지 않습니다. 이 정책은 ONTAP 9.6부터 사용할 수 있습니다.
 
 이 계층화 정책을 선택하기 전에 다음 사항을 고려하세요.
 
@@ -230,7 +230,7 @@ NOTE: 재가열된 데이터는 공간이 있는 경우에만 성능 계층에 �
 +
 데이터가 즉시 계층화되므로 SnapMirror 성능 계층이 아닌 클라우드 계층에서 데이터를 읽습니다.  이로 인해 SnapMirror 작업이 더 느려지고, 대기열에 있는 다른 SnapMirror 작업도 느려질 수 있습니다. 이는 서로 다른 계층화 정책을 사용하더라도 마찬가지입니다.
 
-* NetApp 백업 및 복구도 계층화 정책으로 설정된 볼륨의 영향을 받습니다. https://docs.netapp.com/us-en/bluexp-backup-recovery/concept-ontap-backup-to-cloud.html#fabricpool-tiering-policy-considerations["백업 및 복구를 통한 계층화 정책 고려 사항 보기"^] .
+* NetApp Backup and Recovery 도 계층화 정책으로 설정된 볼륨의 영향을 받습니다. https://docs.netapp.com/us-en/bluexp-backup-recovery/concept-ontap-backup-to-cloud.html#fabricpool-tiering-policy-considerations["백업 및 복구를 통한 계층화 정책 고려 사항 보기"^] .
 
 
 --

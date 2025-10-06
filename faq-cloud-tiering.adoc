@@ -4,7 +4,7 @@ permalink: faq-cloud-tiering.html
 keywords: faq, questions, requirements, service connector, agent, object store, object storage, aws, azure, bucket, cluster, aggregate, s3, storage class, standard, inactive data reporting, auto, volume tiering policy, policy, tiering policy, snapshot, cold, inactive, infrequent, agent, netapp console, console,cloud tier 
 summary: 이 FAQ는 질문에 대한 빠른 답변을 찾는 데 도움이 될 수 있습니다. 
 ---
-= NetApp 클라우드 계층화 기술 FAQ
+= NetApp Cloud Tiering 기술 FAQ
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: 이 FAQ는 질문에 대한 빠른 답변을 찾는 데 도움이 될 �
 
 
 [role="lead"]
-NetApp 클라우드 계층화와 관련된 질문에 대한 빠른 답변을 찾고 있다면 이 FAQ가 도움이 될 수 있습니다.
+NetApp Cloud Tiering 와 관련된 질문에 대한 빠른 답변을 찾고 있다면 이 FAQ가 도움이 될 수 있습니다.
 
 
 
@@ -82,7 +82,7 @@ FabricPool 은 ONTAP CLI 및 System Manager를 통해 자체 관리하거나 Clo
 
 === 클라우드 티어링은 어떤 블록을 클라우드에 티어링할지 어떻게 결정합니까?
 
-볼륨과 관련된 계층화 정책은 어떤 블록을 언제 계층화할지 제어하는 메커니즘입니다.  정책은 데이터 블록 유형(스냅샷, 사용자 데이터 또는 둘 다)과 냉각 기간을 정의합니다. 보다link:concept-cloud-tiering.html#volume-tiering-policies["볼륨 티어링 정책"] 자세한 내용은.
+볼륨과 관련된 계층화 정책은 어떤 블록을 언제 계층화할지 제어하는 메커니즘입니다.  정책은 데이터 블록 유형(스냅샷, 사용자 데이터 또는 둘 다)과 냉각 기간을 정의합니다.  보다link:concept-cloud-tiering.html#volume-tiering-policies["볼륨 티어링 정책"] 자세한 내용은.
 
 
 
@@ -118,7 +118,7 @@ IDR은 구성된 냉각 기간이 지난 후에 정보를 표시하기 시작합
 * 연간(BYOL) 기간 기반 구독의 경우, GB/월당 $0.033부터 시작합니다.
 
 
-https://bluexp.netapp.com/pricing["가격 세부 정보 보기"] .
+https://bluexp.netapp.com/pricing["가격 세부 정보 보기"].
 
 콜드 데이터를 NetApp StorageGRID 시스템(프라이빗 클라우드)에 계층화할 때는 비용이 발생하지 않습니다.
 
@@ -168,11 +168,11 @@ BYOL 용량 한도에 도달하거나 BYOL 라이선스가 만료되면 새로�
 
 === 클라우드 티어링을 활성화하기 전에 볼륨 절감액을 추산하고 콜드 데이터 보고서를 받으려면 어떻게 해야 합니까?
 
-추정치를 얻으려면 ONTAP 클러스터를 NetApp 콘솔에 추가하고 클라우드 계층화 클러스터 페이지를 통해 검사하세요.  클러스터를 시작하려면 *잠재적 계층화 절감 계산*을 선택하세요. https://bluexp.netapp.com/cloud-tiering-service-tco["클라우드 티어링 TCO 계산기"^] 얼마나 많은 돈을 절약할 수 있는지 확인해 보세요.
+추정치를 얻으려면 ONTAP 클러스터를 NetApp Console 에 추가하고 클라우드 계층화 클러스터 페이지를 통해 검사하세요.  클러스터를 시작하려면 *잠재적 계층화 절감 계산*을 선택하세요. https://bluexp.netapp.com/cloud-tiering-service-tco["클라우드 티어링 TCO 계산기"^] 얼마나 많은 돈을 절약할 수 있는지 확인해 보세요.
 
 
 
-=== ONTAP MetroCluster 사용할 때 계층화 요금은 어떻게 청구됩니까?
+=== ONTAP MetroCluster 사용할 때 계층화 비용은 어떻게 청구됩니까?
 
 MetroCluster 환경에서 사용하는 경우 전체 계층화 라이선스가 두 클러스터 모두에 적용됩니다.  예를 들어, 100TiB의 계층화 라이선스가 있는 경우 각 클러스터의 사용된 계층화 용량은 총 100TiB 용량에 포함됩니다.
 
@@ -210,13 +210,13 @@ MetroCluster 환경에서 사용하는 경우 전체 계층화 라이선스가 �
 
 === Cloud Volumes ONTAP 은 어떤가요?
 
-Cloud Volumes ONTAP 시스템이 있는 경우 클라우드 계층화 클러스터 페이지에서 해당 시스템을 찾을 수 있으며, 이를 통해 하이브리드 클라우드 인프라의 데이터 계층화를 전체적으로 파악할 수 있습니다.  하지만 Cloud Volumes ONTAP 시스템은 Cloud Tiering에서 읽기 전용입니다.  Cloud Tiering에서 Cloud Volumes ONTAP 에 데이터 계층화를 설정할 수 없습니다. https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-tiering.html["NetApp 콘솔의 ONTAP 시스템에서 Cloud Volumes ONTAP 시스템에 대한 계층화를 설정합니다."^] .
+Cloud Volumes ONTAP 시스템이 있는 경우 클라우드 계층화 클러스터 페이지에서 해당 시스템을 찾을 수 있으며, 이를 통해 하이브리드 클라우드 인프라의 데이터 계층화를 전체적으로 파악할 수 있습니다.  하지만 Cloud Volumes ONTAP 시스템은 Cloud Tiering에서 읽기 전용입니다.  Cloud Tiering에서 Cloud Volumes ONTAP 에 데이터 계층화를 설정할 수 없습니다. https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-tiering.html["NetApp Console 의 ONTAP 시스템에서 Cloud Volumes ONTAP 시스템에 대한 계층화를 설정합니다."^] .
 
 
 
 === ONTAP 클러스터에 필요한 다른 요구 사항은 무엇입니까?
 
-이는 콜드 데이터를 어디에 계층화하느냐에 따라 달라집니다.  자세한 내용은 다음 링크를 참조하세요.
+이는 콜드 데이터를 어디에 분류하느냐에 따라 달라집니다.  자세한 내용은 다음 링크를 참조하세요.
 
 * link:task-tiering-onprem-aws.html#prepare-your-ontap-cluster["Amazon S3에 데이터 계층화"]
 * link:task-tiering-onprem-azure.html#preparing-your-ontap-clusters["Azure Blob 스토리지에 데이터 계층화"]
@@ -264,7 +264,7 @@ Cloud Tiering은 다음과 같은 개체 스토리지 공급자를 지원합니�
 
 === 어떤 S3 스토리지 클래스가 지원되나요?
 
-클라우드 티어링은 _표준_, _표준-빈번하지 않은 액세스_, _단일 영역-빈번하지 않은 액세스_, _지능형 티어링_, _Glacier 즉시 검색_ 스토리지 클래스에 대한 데이터 티어링을 지원합니다. 보다link:reference-aws-support.html["지원되는 S3 스토리지 클래스"] 자세한 내용은.
+클라우드 티어링은 _표준_, _표준-빈번하지 않은 액세스_, _단일 영역-빈번하지 않은 액세스_, _지능형 티어링_, _Glacier 즉시 검색_ 스토리지 클래스에 대한 데이터 티어링을 지원합니다.  보다link:reference-aws-support.html["지원되는 S3 스토리지 클래스"] 자세한 내용은.
 
 
 
@@ -282,13 +282,13 @@ Amazon S3 Glacier Flexible과 S3 Glacier Deep Archive가 지원되지 않는 주
 
 === 어떤 Azure Blob 액세스 계층이 지원되나요?
 
-클라우드 티어링은 비활성 데이터에 대해 _핫_ 또는 _쿨_ 액세스 계층으로의 데이터 티어링을 지원합니다. 보다link:reference-azure-support.html["지원되는 Azure Blob 액세스 계층"] 자세한 내용은.
+클라우드 티어링은 비활성 데이터에 대해 _핫_ 또는 _쿨_ 액세스 계층으로의 데이터 티어링을 지원합니다.  보다link:reference-azure-support.html["지원되는 Azure Blob 액세스 계층"] 자세한 내용은.
 
 
 
 === Google Cloud Storage에서는 어떤 스토리지 클래스가 지원되나요?
 
-클라우드 티어링은 _Standard_, _Nearline_, _Coldline_, _Archive_ 스토리지 클래스에 대한 데이터 티어링을 지원합니다. 보다link:reference-google-support.html["지원되는 Google Cloud 스토리지 클래스"] 자세한 내용은.
+클라우드 티어링은 _Standard_, _Nearline_, _Coldline_, _Archive_ 스토리지 클래스에 대한 데이터 티어링을 지원합니다.  보다link:reference-google-support.html["지원되는 Google Cloud 스토리지 클래스"] 자세한 내용은.
 
 
 
@@ -336,7 +336,7 @@ ONTAP 9.6부터 대상 집계가 소스 집계와 동일한 클라우드 계층�
 
 
 
-=== 기존 AFF/ FAS 컨트롤러를 새 컨트롤러로 교체할 때, 계층화된 데이터가 온프레미스로 다시 마이그레이션됩니까?
+=== 기존 AFF/ FAS 컨트롤러를 새 컨트롤러로 교체하면 계층화된 데이터가 온프레미스로 다시 마이그레이션됩니까?
 
 아니요. "헤드 스왑" 절차 동안 변경되는 것은 집계된 소유권뿐입니다.  이 경우, 데이터 이동 없이 새로운 컨트롤러로 변경됩니다.
 
@@ -356,7 +356,7 @@ ONTAP 9.6부터 대상 집계가 소스 집계와 동일한 클라우드 계층�
 
 === 콘솔 에이전트란 무엇인가요?
 
-콘솔 에이전트는 클라우드 계정 내부 또는 온프레미스의 컴퓨팅 인스턴스에서 실행되는 소프트웨어로, NetApp 콘솔이 클라우드 리소스를 안전하게 관리할 수 있도록 해줍니다.  클라우드 티어링 서비스를 사용하려면 에이전트를 배포해야 합니다.
+콘솔 에이전트는 클라우드 계정 내부 또는 온프레미스의 컴퓨팅 인스턴스에서 실행되는 소프트웨어로, NetApp Console 클라우드 리소스를 안전하게 관리할 수 있도록 해줍니다. 클라우드 티어링 서비스를 사용하려면 에이전트를 배포해야 합니다.
 
 
 
@@ -402,7 +402,7 @@ ONTAP 9.6부터 대상 집계가 소스 집계와 동일한 클라우드 계층�
 * 모든 사용자 데이터(전체): 모든 데이터를 콜드 데이터로 분류하고 전체 볼륨을 즉시 개체 스토리지로 이동합니다.
 
 
-link:concept-cloud-tiering.html#volume-tiering-policies["티어링 정책에 대해 자세히 알아보세요"] .
+link:concept-cloud-tiering.html#volume-tiering-policies["티어링 정책에 대해 자세히 알아보세요"].
 
 
 
@@ -444,7 +444,7 @@ link:concept-cloud-tiering.html#volume-tiering-policies["티어링 정책에 대
 
 === 데이터를 클라우드에 계층화한 후 계층화 정책을 변경할 수 있나요?
 
-네. 변경 후의 동작은 연관된 새 정책에 따라 달라집니다.
+네. 변경 후의 동작은 새로 연결된 정책에 따라 달라집니다.
 
 
 
@@ -527,9 +527,9 @@ AES-256-GCM 암호화는 성능 및 클라우드 계층 모두에서 유지됩�
 
 === 어떤 권한이 필요합니까?
 
-* link:task-tiering-onprem-aws.html#set-up-s3-permissions["Amazon의 경우 S3 버킷을 관리하려면 권한이 필요합니다."] .
-* Azure의 경우 NetApp 콘솔에 제공해야 하는 권한 외에 추가 권한은 필요하지 않습니다.
-* link:task-tiering-onprem-gcp.html#preparing-google-cloud-storage["Google Cloud의 경우 스토리지 액세스 키가 있는 서비스 계정에 스토리지 관리자 권한이 필요합니다."] .
-* link:task-tiering-onprem-storagegrid.html#preparing-storagegrid["StorageGRID 의 경우 S3 권한이 필요합니다."] .
-* link:task-tiering-onprem-s3-compat.html#preparing-s3-compatible-object-storage["S3 호환 개체 스토리지의 경우 S3 권한이 필요합니다."] .
+* link:task-tiering-onprem-aws.html#set-up-s3-permissions["Amazon의 경우 S3 버킷을 관리하려면 권한이 필요합니다."].
+* Azure의 경우 NetApp Console 에 제공해야 하는 권한 외에 추가 권한은 필요하지 않습니다.
+* link:task-tiering-onprem-gcp.html#preparing-google-cloud-storage["Google Cloud의 경우 스토리지 액세스 키가 있는 서비스 계정에 스토리지 관리자 권한이 필요합니다."].
+* link:task-tiering-onprem-storagegrid.html#preparing-storagegrid["StorageGRID 의 경우 S3 권한이 필요합니다."].
+* link:task-tiering-onprem-s3-compat.html#preparing-s3-compatible-object-storage["S3 호환 개체 스토리지의 경우 S3 권한이 필요합니다."].
 

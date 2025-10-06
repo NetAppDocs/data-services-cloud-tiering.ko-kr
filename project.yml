@@ -11,13 +11,13 @@ settings:
   langs: ko-kr,us-en,de-de,es-es,fr-fr,it-it,pt-br,ja-jp,zh-cn,zh-tw
 sidebar:
   entries:
-  - title: NetApp 클라우드 계층화 문서
+  - title: NetApp Cloud Tiering 문서
     url: "/index.html"
   - title: 릴리스 노트
     url: "/whats-new.html"
   - title: 시작하기
     entries:
-    - title: NetApp 클라우드 계층화에 대해 알아보세요
+    - title: NetApp Cloud Tiering 에 대해 알아보세요
       url: "/concept-cloud-tiering.html"
     - title: 온프레미스 데이터를 클라우드로 계층화
       entries:
@@ -35,7 +35,7 @@ sidebar:
       url: "/task-licensing-cloud-tiering.html"
     - title: 자주 묻는 질문
       url: "/faq-cloud-tiering.html"
-  - title: NetApp 클라우드 계층화 사용
+  - title: NetApp Cloud Tiering 사용
     entries:
     - title: 데이터 계층화 관리
       url: "/task-managing-tiering.html"
