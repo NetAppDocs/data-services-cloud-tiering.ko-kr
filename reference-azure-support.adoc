@@ -1,0 +1,35 @@
+---
+sidebar: sidebar 
+permalink: reference-azure-support.html 
+keywords: microsoft azure, azure, hot, access tier, cold, regions, cloud tiering, tier, bluexp 
+summary: NetApp Cloud Tiering은 두 가지 액세스 계층과 대부분의 지역을 지원합니다. 
+---
+= NetApp Cloud Tiering에 지원되는 Azure Blob 액세스 계층 및 지역
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+NetApp Cloud Tiering은 두 가지 액세스 계층과 대부분의 지역을 지원합니다.
+
+
+
+== 지원되는 Azure Blob 액세스 계층
+
+온-프레미스 ONTAP 시스템에서 Azure로 데이터 계층화를 설정하면 Cloud Tiering은 비활성 데이터에 대해 자동으로 _핫_ 액세스 계층을 사용합니다.  클라우드 티어링은 특정 일수 후에 데이터가 _핫_ 액세스 계층에서 _쿨_ 액세스 계층으로 전환되도록 수명 주기 규칙을 적용할 수 있습니다.
+
+_Cool_ 액세스 계층을 선택하지 않으면 데이터는 _Hot_ 액세스 계층에 남아 있으며 규칙은 적용되지 않습니다.
+
+클라우드 계층화 수명 주기 규칙을 구성하는 경우 Azure 계정에서 컨테이너를 설정할 때 어떤 수명 주기 규칙도 구성해서는 안 됩니다.
+
+https://docs.microsoft.com/en-us/azure/storage/blobs/access-tiers-overview["Azure Blob 액세스 계층에 대해 알아보기"^] .
+
+
+
+== 지원되는 Azure 지역
+
+클라우드 티어링은 중국을 제외한 모든 Azure 지역에서 지원되며, 중국에서는 21Vianet이 Microsoft Azure를 운영합니다.

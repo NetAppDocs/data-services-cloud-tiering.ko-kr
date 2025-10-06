@@ -1,0 +1,234 @@
+---
+sidebar: sidebar 
+permalink: task-licensing-cloud-tiering.html 
+keywords: subscribe, digital wallet, trial, marketplace, subscription, paygo, pay as you go, byol, bring your own license, annual, tiering, cloud tiering, license, cloud tiering, bluexp 
+summary: NetApp Cloud Tiering의 30일 무료 평가판은 첫 번째 클러스터에서 계층화를 설정할 때 시작됩니다.  무료 평가판이 종료된 후에는 클라우드 공급업체의 마켓플레이스에서 사용량 기반 요금제나 연간 구독을 통해 클라우드 티어링 비용을 지불하거나, NetApp 의 BYOL 라이선스를 구매하거나, 두 가지를 결합한 방식으로 비용을 지불해야 합니다. 
+---
+= NetApp Cloud Tiering에 대한 라이선싱 설정
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+NetApp Cloud Tiering의 30일 무료 평가판은 첫 번째 클러스터에서 계층화를 설정할 때 시작됩니다.  무료 평가판이 종료된 후에는 클라우드 공급업체의 마켓플레이스에서 사용량 기반 요금제나 연간 구독을 통해 클라우드 티어링 비용을 지불하거나, NetApp 의 BYOL 라이선스를 구매하거나, 두 가지를 결합한 방식으로 비용을 지불해야 합니다.
+
+계속 읽기 전에 몇 가지 참고 사항을 알려드립니다.
+
+* 클라우드 공급업체의 마켓플레이스에서 이미 Cloud Tiering(PAYGO)을 구독한 경우 온프레미스 ONTAP 시스템의 Cloud Tiering에도 자동으로 구독됩니다.  클라우드 티어링 *온프레미스 대시보드* 탭에서 활성화된 구독을 확인할 수 있습니다.  다시 구독할 필요는 없습니다.  NetApp 콘솔에서 활성화된 구독을 확인할 수 있습니다.
+* BYOL 클라우드 계층화 라이선스(이전에는 "클라우드 계층화" 라이선스라고 함)는 NetApp 콘솔 조직 내 여러 온프레미스 ONTAP 클러스터에서 사용할 수 있는 _플로팅_ 라이선스입니다.  이는 과거에 각 클러스터에 대해 _FabricPool_ 라이선스를 구매했던 것과는 다르고 훨씬 쉽습니다.
+* StorageGRID 에 데이터를 계층화할 때는 비용이 청구되지 않으므로 BYOL 라이선스나 PAYGO 등록이 필요하지 않습니다.  이 계층형 데이터는 라이선스에서 구매한 용량에 포함되지 않습니다.
+
+
+link:concept-cloud-tiering.html#pricing-and-licenses["클라우드 계층화에 대한 라이선싱 작동 방식에 대해 자세히 알아보세요."] .
+
+
+
+== 30일 무료 체험
+
+Cloud Tiering 라이선스가 없는 경우 첫 번째 클러스터에 계층화를 설정하면 Cloud Tiering의 30일 무료 평가판이 시작됩니다.  30일 무료 체험 기간이 종료되면 사용량 기반 구독, 연간 구독, BYOL 라이선스 또는 이 둘을 조합하여 Cloud Tiering 비용을 지불해야 합니다.
+
+무료 평가판이 종료되고 구독하거나 라이선스를 추가하지 않으면 ONTAP 더 이상 콜드 데이터를 개체 스토리지에 계층화하지 않습니다.  이전에 계층화된 모든 데이터는 계속 액세스할 수 있습니다. 즉, 이 데이터를 검색하여 사용할 수 있습니다.  검색된 데이터는 클라우드에서 성능 계층으로 다시 이동됩니다.
+
+
+
+== Cloud Tiering PAYGO 구독을 사용하세요
+
+클라우드 공급업체의 마켓플레이스에서 사용량에 따라 요금을 지불하는 구독을 통해 Cloud Volumes ONTAP 시스템과 Cloud Tiering과 같은 많은 클라우드 데이터 서비스를 사용할 수 있는 라이선스를 얻을 수 있습니다.
+
+Cloud Tiering에 가입한 후 콘솔에서 구독을 관리할 수 있습니다.link:https://docs.netapp.com/us-en/bluexp-digital-wallet/task-manage-subscriptions.html#view-your-subscriptions["구독을 보고 관리하세요."^]
+
+
+
+=== AWS Marketplace에서 구독하기
+
+ONTAP 클러스터에서 AWS S3로 데이터를 계층화하는 사용량 기반 구독을 설정하려면 AWS Marketplace에서 Cloud Tiering을 구독하세요.
+
+[[subscribe-aws]]
+.단계
+. NetApp 콘솔에서 *모빌리티 > 클라우드 계층화 > 온프레미스 대시보드*를 선택합니다.
+. _마켓플레이스 구독_ 섹션에서 Amazon Web Services 아래의 *구독*을 선택한 다음 *계속*을 선택합니다.
+. _마켓플레이스 구독_ 섹션에서 Amazon Web Services 아래의 *구독*을 선택한 다음 *계속*을 선택합니다.
+. 에서 구독하세요 https://aws.amazon.com/marketplace/pp/prodview-oorxakq6lq7m4["AWS 마켓플레이스"^] 그런 다음 NetApp 콘솔에 다시 로그인하여 등록을 완료하세요.
++
+다음 영상은 그 과정을 보여줍니다.
+
++
+.AWS Marketplace에서 구독하세요
+video::096e1740-d115-44cf-8c27-b051011611eb[panopto]
+
+
+
+
+=== Azure Marketplace에서 구독
+
+Azure Marketplace에서 Cloud Tiering을 구독하여 ONTAP 클러스터에서 Azure Blob 스토리지로 데이터를 계층화하는 사용량 기반 구독을 설정하세요.
+
+[[subscribe-azure]]
+.단계
+. NetApp 콘솔에서 *모빌리티 > 클라우드 계층화 > 온프레미스 대시보드*를 선택합니다.
+. _마켓플레이스 구독_ 섹션에서 Microsoft Azure 아래의 *구독*을 선택한 다음 *계속*을 선택합니다.
+. _마켓플레이스 구독_ 섹션에서 Microsoft Azure 아래의 *구독*을 선택한 다음 *계속*을 선택합니다.
+. 에서 구독하세요 https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-manager?tab=Overview["Azure 마켓플레이스"^] 그런 다음 NetApp 콘솔에 다시 로그인하여 등록을 완료하세요.
++
+다음 영상은 그 과정을 보여줍니다.
+
++
+.Azure Marketplace에서 구독
+video::b7e97509-2ecf-4fa0-b39b-b0510109a318[panopto]
+
+
+
+
+=== Google Cloud Marketplace에서 구독하기
+
+ONTAP 클러스터에서 Google Cloud Storage로 데이터를 계층화하는 사용량 기반 구독을 설정하려면 Google Cloud Marketplace에서 Cloud Tiering을 구독하세요.
+
+[[subscribe-gcp]]
+.단계
+. NetApp 콘솔에서 *모빌리티 > 클라우드 계층화 > 온프레미스 대시보드*를 선택합니다.
+. _마켓플레이스 구독_ 섹션에서 Google Cloud 아래의 *구독*을 선택한 다음 *계속*을 선택합니다.
+. _마켓플레이스 구독_ 섹션에서 Google Cloud 아래의 *구독*을 선택한 다음 *계속*을 선택합니다.
+. 에서 구독하세요 https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project["구글 클라우드 마켓플레이스"^] 그런 다음 NetApp 콘솔에 다시 로그인하여 등록을 완료하세요.
++
+다음 영상은 그 과정을 보여줍니다.
+
++
+.Google Cloud Marketplace에서 구독하세요
+video::373b96de-3691-4d84-b3f3-b05101161638[panopto]
+
+
+
+
+== 연간 계약을 사용하세요
+
+연간 계약을 구매하여 매년 클라우드 티어링 비용을 지불하세요.  연간 계약은 1년, 2년, 3년 기간으로 가능합니다.
+
+비활성 데이터를 AWS에 계층화할 때 연간 계약을 구독할 수 있습니다. https://aws.amazon.com/marketplace/pp/prodview-q7dg6zwszplri["AWS Marketplace 페이지"^] .  이 옵션을 사용하려면 Marketplace 페이지에서 구독을 설정한 다음 https://docs.netapp.com/us-en/bluexp-setup-admin/task-adding-aws-accounts.html#associate-an-aws-subscription["구독을 AWS 자격 증명과 연결합니다."^] .
+
+비활성 데이터를 Azure에 계층화할 때 연간 계약을 구독할 수 있습니다. https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.netapp-bluexp["Azure Marketplace 페이지"^] .  이 옵션을 사용하려면 Marketplace 페이지에서 구독을 설정한 다음 https://docs.netapp.com/us-en/bluexp-setup-admin/task-adding-azure-accounts.html#subscribe["구독을 Azure 자격 증명과 연결합니다."^] .
+
+현재 Google Cloud로 계층화할 때 연간 계약은 지원되지 않습니다.
+
+
+
+== Cloud Tiering BYOL 라이선스 사용
+
+NetApp 의 BYOL(Bring Your Own License)은 1년, 2년 또는 3년 기간을 제공합니다.  BYOL *클라우드 계층화* 라이선스(이전에는 "클라우드 계층화" 라이선스라고 함)는 NetApp 콘솔 조직 내 여러 온프레미스 ONTAP 클러스터에서 사용할 수 있는 _플로팅_ 라이선스입니다.  Cloud Tiering 라이선스에 정의된 총 계층화 용량은 *모든* 온프레미스 클러스터에서 공유되므로 초기 라이선스 부여 및 갱신이 쉽습니다.  계층형 BYOL 라이선스의 최소 용량은 10TiB부터 시작합니다.
+
+클라우드 티어링 라이선스가 없으신 경우, 당사에 문의하여 구매하세요.
+
+* NetApp 영업 담당자에게 문의하세요.
+* NetApp 지원팀에 문의하세요.
+
+
+선택적으로, 사용하지 않을 Cloud Volumes ONTAP 의 할당되지 않은 노드 기반 라이선스가 있는 경우 동일한 달러 환산 가치와 동일한 만료 날짜를 가진 Cloud Tiering 라이선스로 변환할 수 있습니다. https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-manage-node-licenses.html#exchange-unassigned-node-based-licenses["자세한 내용은 여기를 참조하세요"^] .
+
+콘솔에서 Cloud Tiering BYOL 라이선스를 관리합니다.  새로운 라이선스를 추가하고 기존 라이선스를 업데이트할 수 있습니다.link:https://docs.netapp.com/us-en/bluexp-digital-wallet/task-manage-data-services-licenses.html["라이선스를 관리하는 방법을 알아보세요."^]
+
+
+
+=== 2021년부터 시작되는 클라우드 티어링 BYOL 라이선싱
+
+새로운 *클라우드 계층화* 라이선스는 클라우드 계층화 서비스를 사용하여 NetApp 콘솔에서 지원되는 계층화 구성을 위해 2021년 8월에 도입되었습니다.  NetApp 콘솔은 현재 다음 클라우드 스토리지에 대한 계층화를 지원합니다: Amazon S3, Azure Blob 스토리지, Google Cloud Storage, NetApp StorageGRID 및 S3 호환 개체 스토리지.
+
+과거에 온프레미스 ONTAP 데이터를 클라우드로 계층화하는 데 사용했던 * FabricPool * 라이선스는 인터넷 접속이 없는 사이트(다크 사이트라고도 함)에 ONTAP 배포하고 IBM Cloud Object Storage에 구성을 계층화하는 경우에만 유지됩니다.  이러한 유형의 구성을 사용하는 경우 System Manager나 ONTAP CLI를 사용하여 각 클러스터에 FabricPool 라이선스를 설치합니다.
+
+
+TIP: StorageGRID 에 대한 계층화에는 FabricPool 또는 Cloud Tiering 라이선스가 필요하지 않습니다.
+
+현재 FabricPool 라이선스를 사용 중인 경우 FabricPool 라이선스가 만료일 또는 최대 용량에 도달할 때까지 영향을 받지 않습니다.  라이선스를 업데이트해야 할 경우 또는 그보다 일찍 NetApp ​​문의하여 클라우드로 데이터를 계층화하는 데 방해가 되지 않는지 확인하세요.
+
+* 콘솔에서 지원되는 구성을 사용하는 경우 FabricPool 라이선스가 Cloud Tiering 라이선스로 변환되어 콘솔에 표시됩니다.  초기 라이선스가 만료되면 Cloud Tiering 라이선스를 업데이트해야 합니다.
+* 콘솔에서 지원되지 않는 구성을 사용하는 경우 FabricPool 라이선스를 계속 사용하게 됩니다. https://docs.netapp.com/us-en/ontap/cloud-install-fabricpool-task.html["System Manager를 사용하여 계층화 라이선스를 부여하는 방법을 확인하세요."^] .
+
+
+두 가지 라이센스에 대해 알아야 할 몇 가지 사항은 다음과 같습니다.
+
+[cols="50,50"]
+|===
+| 클라우드 티어링 라이선스 | FabricPool 라이센스 
+
+
+| 이는 여러 온프레미스 ONTAP 클러스터에서 사용할 수 있는 _플로팅_ 라이선스입니다. | 이는 클러스터당 라이선스로, _모든_ 클러스터에 대해 구매하여 라이선스를 부여합니다. 
+
+
+| NetApp 콘솔에 등록되어 있습니다. | 시스템 관리자나 ONTAP CLI를 사용하여 개별 클러스터에 적용됩니다. 
+
+
+| 계층화 구성 및 관리 작업은 NetApp 콘솔의 클라우드 계층화 서비스를 통해 수행됩니다. | 계층화 구성 및 관리 작업은 System Manager나 ONTAP CLI를 통해 수행됩니다. 
+
+
+| 계층화가 구성되면 무료 평가판을 사용하여 30일 동안 라이선스 없이 계층화 서비스를 사용할 수 있습니다. | 구성이 완료되면 처음 10TB의 데이터를 무료로 계층화할 수 있습니다. 
+|===
+
+
+=== 클라우드 티어링 라이선스 관리
+
+라이선스 기간이 만료일에 가까워지거나 라이선스 용량이 한도에 도달하면 클라우드 티어링과 콘솔에서 알림을 받게 됩니다.
+
+콘솔을 통해 기존 라이선스를 업데이트하고, 라이선스 상태를 보고, 새 라이선스를 추가할 수 있습니다. https://docs.netapp.com/us-en/bluexp-digital-wallet/task-manage-data-services-licenses.html["라이선스 관리에 대해 알아보세요"^] .
+
+
+
+== 특수 구성의 클러스터에 Cloud Tiering 라이선스 적용
+
+다음 구성의 ONTAP 클러스터는 Cloud Tiering 라이선스를 사용할 수 있지만 라이선스는 단일 노드 클러스터, HA 구성 클러스터, Tiering Mirror 구성의 클러스터 및 FabricPool Mirror를 사용하는 MetroCluster 구성과는 다른 방식으로 적용해야 합니다.
+
+* IBM Cloud Object Storage에 계층화된 클러스터
+* "다크 사이트"에 설치된 클러스터
+
+
+
+
+=== FabricPool 라이선스가 있는 기존 클러스터에 대한 프로세스
+
+당신이 때link:task-managing-tiering.html#discovering-additional-clusters-from-bluexp-tiering["Cloud Tiering에서 이러한 특수 클러스터 유형을 찾아보세요."] Cloud Tiering은 FabricPool 라이선스를 인식하고 해당 라이선스를 콘솔에 추가합니다.  해당 클러스터는 평소와 같이 데이터 계층화를 계속 진행합니다.  FabricPool 라이선스가 만료되면 Cloud Tiering 라이선스를 구매해야 합니다.
+
+
+
+=== 새로 생성된 클러스터에 대한 프로세스
+
+Cloud Tiering에서 일반적인 클러스터를 발견하면 Cloud Tiering 인터페이스를 사용하여 계층화를 구성합니다.  이런 경우 다음과 같은 작업이 발생합니다.
+
+. "부모" 클라우드 티어링 라이선스는 모든 클러스터에서 티어링에 사용되는 용량을 추적하여 라이선스에 충분한 용량이 있는지 확인합니다.  총 라이선스 용량과 만료 날짜는 콘솔에 표시됩니다.
+. "자식" 계층 라이선스는 "부모" 라이선스와 통신하기 위해 각 클러스터에 자동으로 설치됩니다.
+
+
+
+NOTE: 시스템 관리자나 ONTAP CLI에서 "자식" 라이선스에 대해 표시되는 라이선스 용량 및 만료 날짜는 실제 정보가 아니므로 정보가 달라도 걱정하지 마세요.  이러한 값은 Cloud Tiering 소프트웨어에 의해 내부적으로 관리됩니다.  실제 정보는 콘솔에서 추적됩니다.
+
+위에 나열된 두 가지 구성의 경우, System Manager나 ONTAP CLI를 사용하여 계층화를 구성해야 합니다(Cloud Tiering 인터페이스를 사용해서는 안 됨).  따라서 이런 경우에는 Cloud Tiering 인터페이스에서 수동으로 "자식" 라이선스를 해당 클러스터에 푸시해야 합니다.
+
+Tiering Mirror 구성의 경우 데이터가 두 개의 서로 다른 개체 스토리지 위치에 계층화되므로 두 위치 모두에 데이터를 계층화할 수 있는 충분한 용량이 있는 라이선스를 구매해야 합니다.
+
+.단계
+. System Manager나 ONTAP CLI를 사용하여 ONTAP 클러스터를 설치하고 구성합니다.
++
+이 시점에서는 계층화를 구성하지 마세요.
+
+. link:task-licensing-cloud-tiering.html#use-a-bluexp-tiering-byol-license["클라우드 티어링 라이선스 구매"]새로운 클러스터 또는 클러스터들에 필요한 용량을 위해서입니다.
+. 콘솔에서<<licenses,디지털 지갑에 라이센스를 추가하세요>> [라이센스 추가]
+. 클라우드 티어링에서link:task-managing-tiering.html#discovering-additional-clusters-from-bluexp-tiering["새로운 클러스터를 발견하다"] .
+. 클러스터 페이지에서 다음을 선택하세요.image:screenshot_horizontal_more_button.gif["더 많은 아이콘"] 클러스터에 대해 *라이선스 배포*를 선택합니다.
++
+image:screenshot_tiering_deploy_license.png["ONTAP 클러스터에 계층화 라이선스를 배포하는 방법을 보여주는 스크린샷입니다."]
+
+. _라이선스 배포_ 대화 상자에서 *배포*를 선택합니다.
++
+자식 라이선스는 ONTAP 클러스터에 배포됩니다.
+
+. 시스템 관리자나 ONTAP CLI로 돌아가서 계층화 구성을 설정하세요.
++
+https://docs.netapp.com/us-en/ontap/fabricpool/manage-mirrors-task.html["FabricPool 미러 구성 정보"]
+
++
+https://docs.netapp.com/us-en/ontap/fabricpool/setup-object-stores-mcc-task.html["FabricPool MetroCluster 구성 정보"]
+
++
+https://docs.netapp.com/us-en/ontap/fabricpool/setup-ibm-object-storage-cloud-tier-task.html["IBM Cloud Object Storage 정보로의 계층화"]
+
+

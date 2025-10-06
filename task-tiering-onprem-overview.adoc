@@ -1,0 +1,46 @@
+---
+sidebar: sidebar 
+permalink: task-tiering-onprem-overview.html 
+keywords: overview, tiering overview, tiered clusters, clusters enabled for tiering, data tiering overview, cold data, hot data, tiered data, savings, savings opportunities, saving opportunity, policies, cold snapshots, all dp user data, cold user data & snapshots, cold user data and snapshots, all user data, no policy, marketplace subscriptions, clusters associated 
+summary: 클라우드 티어링은 온프레미스 클러스터 각각의 데이터 티어링에 대한 집계된 보기를 제공합니다.  이 개요는 주변 환경에 대한 명확한 그림을 제공하고 적절한 조치를 취하는 데 도움이 됩니다. 
+---
+= NetApp Cloud Tiering에서 클러스터의 데이터 계층화 개요를 확인하세요.
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+NetApp Cloud Tiering은 온프레미스 클러스터 각각의 데이터 계층화에 대한 집계된 보기를 제공합니다.  이 개요는 주변 환경에 대한 명확한 그림을 제공하고 적절한 조치를 취하는 데 도움이 됩니다.
+
+*클라우드 계층화 > 온프레미스 대시보드*를 선택하면 사용자 환경에 대한 다음 세부 정보를 볼 수 있습니다.
+
+image:screenshot_tiering_onprem_dashboard.png["온프레미스 대시보드 페이지의 스크린샷입니다."]
+
+발견된 클러스터:: Cloud Tiering이 검색한 온프레미스 클러스터의 수입니다.  차트는 이러한 클러스터의 계층화 상태에 대한 개요를 제공합니다.
++
+--
+* 높은 계층화 - 콜드 데이터의 20% 이상을 계층화하는 클러스터
+* 낮은 계층화 - 콜드 데이터의 20% 미만을 계층화하는 클러스터
+* 계층화 없음 - 데이터를 계층화하지 않는 클러스터
+* 적합하지 않음 - 데이터 계층화를 지원하지 않는 클러스터
+
+
+--
+데이터 개요:: 검색된 모든 클러스터에서 사용되고 있는 데이터 양입니다. 차트는 이러한 클러스터에서 얼마나 많은 데이터가 계층화되는지 보여줍니다.
++
+--
+* 계층화된 데이터 - 클라우드에 계층화된 총 콜드 데이터
+* 콜드 데이터 - 계층화되지 않은 총 콜드 데이터
+* 핫 데이터 - 현재 사용 중인 총 핫 데이터
+* 적격하지 않음 - 클러스터 또는 볼륨이 데이터 계층화를 지원하지 않기 때문에 계층화되지 않는 총 데이터
+
+
+--
+계층화 개요:: 현재 계층화 중인 데이터의 양과 잠재적으로 계층화될 수 있는 콜드 데이터의 양입니다.
+정책:: 각 계층화 정책이 볼륨에 적용된 횟수입니다.
+마켓플레이스 구독:: 각 유형의 마켓플레이스 구독과 관련된 클러스터 수와 구독 상태에 대한 표시입니다.
+

@@ -1,0 +1,68 @@
+---
+settings:
+  name: NetApp Cloud Tiering
+  platform: cloud
+  internal:
+    pdf_enabled: true
+  prod:
+    pdf_enabled: true
+    harmony_enabled: false
+  rss_page: whats-new.html
+  langs: ko-kr,us-en,de-de,es-es,fr-fr,it-it,pt-br,ja-jp,zh-cn,zh-tw
+sidebar:
+  entries:
+  - title: NetApp 클라우드 계층화 문서
+    url: "/index.html"
+  - title: 릴리스 노트
+    url: "/whats-new.html"
+  - title: 시작하기
+    entries:
+    - title: NetApp 클라우드 계층화에 대해 알아보세요
+      url: "/concept-cloud-tiering.html"
+    - title: 온프레미스 데이터를 클라우드로 계층화
+      entries:
+      - title: Amazon S3로 계층화
+        url: "/task-tiering-onprem-aws.html"
+      - title: Azure Blob 저장소로의 계층화
+        url: "/task-tiering-onprem-azure.html"
+      - title: Google Cloud Storage로의 계층화
+        url: "/task-tiering-onprem-gcp.html"
+      - title: StorageGRID 로의 계층화
+        url: "/task-tiering-onprem-storagegrid.html"
+      - title: S3 개체 스토리지로 계층화
+        url: "/task-tiering-onprem-s3-compat.html"
+    - title: 라이센스 설정
+      url: "/task-licensing-cloud-tiering.html"
+    - title: 자주 묻는 질문
+      url: "/faq-cloud-tiering.html"
+  - title: NetApp 클라우드 계층화 사용
+    entries:
+    - title: 데이터 계층화 관리
+      url: "/task-managing-tiering.html"
+    - title: 객체 스토리지 관리
+      url: "/task-managing-object-storage.html"
+    - title: 클라우드 성능 테스트
+      url: "/task-tiering-test.html"
+    - title: 모든 클러스터에 대한 계층화 개요 보기
+      url: "/task-tiering-onprem-overview.html"
+    - title: 티어링 알림 상태 모니터링
+      url: "/task-monitor-tiering-alerts.html"
+  - title: 참조
+    entries:
+    - title: 지원되는 Amazon S3 스토리지 클래스 및 지역
+      url: "/reference-aws-support.html"
+    - title: 지원되는 Azure 액세스 계층 및 지역
+      url: "/reference-azure-support.html"
+    - title: 지원되는 Google Cloud 스토리지 클래스 및 지역
+      url: "/reference-google-support.html"
+  - title: 지식과 지원
+    entries:
+    - title: 지원 등록
+      url: "/task-support-registration.html"
+    - title: 도움을 받으세요
+      url: "/task-get-help.html"
+  - title: 법적 고지 사항
+    url: "/legal-notices.html"
+product-family:
+  name: NetApp Data Services
+  repo: data-services-family

@@ -1,0 +1,61 @@
+---
+indexpage:
+  title: NetApp 클라우드 계층화 설명서
+  summary: NetApp Cloud Tiering은 온프레미스 ONTAP 클러스터에서 비활성 데이터를 개체 스토리지로 자동 계층화하여 데이터
+    센터를 클라우드로 확장합니다.
+  keywords: bluexp, ontap, cloud tiering, documentation, netapp console, console
+  lead: NetApp Cloud Tiering은 온프레미스 ONTAP 클러스터에서 비활성 데이터를 개체 스토리지로 자동 계층화하여 데이터 센터를
+    클라우드로 확장합니다.
+  tiles:
+  - title: 시작하기
+    links:
+    - title: NetApp 클라우드 계층화에 대해 알아보세요
+      url: concept-cloud-tiering.html
+    - title: 새로운 소식
+      url: whats-new.html
+    - title: 라이센스 설정
+      url: task-licensing-cloud-tiering.html
+  - title: 온프레미스 ONTAP 데이터를 클라우드로 계층화
+    links:
+    - title: Amazon S3로 계층화
+      url: task-tiering-onprem-aws.html
+    - title: Azure Blob에 대한 계층화
+      url: task-tiering-onprem-azure.html
+    - title: Google Cloud로의 계층화
+      url: task-tiering-onprem-gcp.html
+    - title: StorageGRID 로의 계층화
+      url: task-tiering-onprem-storagegrid.html
+    - title: 일반 S3로 계층화
+      url: task-tiering-onprem-s3-compat.html
+  - title: 티어링 설정 관리
+    links:
+    - title: 볼륨의 계층화 정책 변경
+      url: task-managing-tiering.html#changing-a-volumes-tiering-policy
+    - title: 클러스터의 계층화 정보 검토
+      url: task-managing-tiering.html#reviewing-tiering-info-for-a-cluster
+    - title: 추가 볼륨의 계층 데이터
+      url: task-managing-tiering.html#tiering-data-from-additional-volumes
+    - title: 비활성 데이터를 개체 스토리지에 업로드하기 위한 대역폭 변경
+      url: task-managing-tiering.html#changing-the-network-bandwidth-available-to-upload-inactive-data-to-object-storage
+    - title: 클라우드에서 성능 계층으로 데이터를 다시 이동합니다.
+      url: task-managing-tiering.html#migrating-data-from-the-cloud-tier-back-to-the-performance-tier
+    - title: 집계에 대한 계층화 설정 관리
+      url: task-managing-tiering.html#managing-tiering-settings-on-aggregates
+  - title: 객체 스토리지 관리
+    links:
+    - title: 클러스터에 대한 새 개체 저장소 추가
+      url: task-managing-object-storage.html#adding-a-new-object-store
+    - title: 미러링을 위해 집계에 두 번째 개체 저장소 추가
+      url: task-managing-object-storage.html#attaching-a-second-object-store-to-an-aggregate-for-mirroring
+    - title: 기본 및 미러 개체 저장소를 교체합니다.
+      url: task-managing-object-storage.html#swapping-the-primary-and-mirror-object-store
+    - title: 미러 객체 저장소 제거
+      url: task-managing-object-storage.html#removing-a-mirror-object-store-from-an-aggregate
+  - title: 블로그 및 커뮤니티
+    links:
+    - title: NetApp 콘솔
+      url: https://www.netapp.com/console
+    - title: NetApp 데이터 서비스
+      url: https://www.netapp.com/data-services/
+    - title: NetApp 커뮤니티
+      url: https://community.netapp.com/

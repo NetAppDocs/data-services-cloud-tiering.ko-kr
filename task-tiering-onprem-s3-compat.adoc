@@ -1,0 +1,222 @@
+---
+sidebar: sidebar 
+permalink: task-tiering-onprem-s3-compat.html 
+keywords: data tiering, fabricpool, cloud tiering, tiering cold data, tiering inactive data, tiering aff, tiering fas, tiering ontap, tiering volumes, tier data, tier cold data, tier fas, tier aff, tier ontap, s3, tier to s3, minio 
+summary: 'Simple Storage Service(S3) 프로토콜을 사용하는 모든 Object Storage 서비스에 비활성 데이터를 계층화하여 온프레미스 ONTAP 클러스터의 공간을 확보하세요.' 
+---
+= NetApp Cloud Tiering에서 온프레미스 ONTAP 클러스터의 데이터를 S3 개체 스토리지로 계층화
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+NetApp Cloud Tiering에서 비활성 데이터를 Simple Storage Service(S3) 프로토콜을 사용하는 모든 개체 스토리지 서비스에 계층화하여 온프레미스 ONTAP 클러스터의 공간을 확보하세요.
+
+현재 MinIO 객체 스토리지가 검증되었습니다.
+
+[CAUTION]
+====
+공식적으로 클라우드 계층으로 지원되지 않는 개체 저장소를 사용하려는 고객은 다음 지침을 사용하여 해당 작업을 수행할 수 있습니다.  고객은 객체 저장소가 요구 사항을 충족하는지 테스트하고 확인해야 합니다.
+
+NetApp 타사 Object Store Service로 인해 발생하는 문제에 대해 지원하지 않으며, 책임을 지지 않습니다. 특히, 해당 제품이 출시된 타사와 지원 계약을 체결하지 않은 경우에는 더욱 그렇습니다.  NetApp 관련된 손해에 대해 책임을 지지 않으며, 다른 방식으로 해당 타사 제품에 대한 지원을 제공할 의무도 없다는 점을 인정하고 동의합니다.
+
+====
+
+
+== 빠른 시작
+
+다음 단계에 따라 빠르게 시작하거나, 나머지 섹션으로 스크롤하여 자세한 내용을 확인하세요.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["하나"]S3 호환 개체 스토리지에 데이터를 계층화할 준비
+[role="quick-margin-para"]
+다음이 필요합니다.
+
+[role="quick-margin-list"]
+* NetApp 콘솔에 추가한 ONTAP 9.8 이상을 실행하는 온프레미스 ONTAP 클러스터와 대상 S3 호환 개체 스토리지에 대한 사용자 지정 포트를 통한 연결. https://docs.netapp.com/us-en/bluexp-ontap-onprem/task-discovering-ontap.html["클러스터를 검색하는 방법을 알아보세요"^] .
+* ONTAP 클러스터가 버킷에 액세스할 수 있도록 개체 스토리지 서버에 대한 FQDN, 액세스 키 및 비밀 키입니다.
+* 귀하의 구내에 콘솔 에이전트가 설치되었습니다.
+* 소스 ONTAP 클러스터, S3 호환 개체 스토리지 및 Cloud Tiering 서비스에 대한 아웃바운드 HTTPS 연결을 활성화하는 에이전트에 대한 네트워킹입니다.
+
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["둘"]계층화 설정
+[role="quick-margin-para"]
+콘솔에서 온프레미스 시스템을 선택하고 계층화 서비스에 대해 *활성화*를 선택한 다음, 메시지에 따라 데이터를 S3 호환 개체 스토리지로 계층화합니다.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["삼"]라이센스 설정
+[role="quick-margin-para"]
+클라우드 공급업체의 사용량 기반 구독, 클라우드 티어링 자체 라이선스 구매 또는 두 가지를 결합한 방식을 통해 클라우드 티어링 비용을 지불하세요.
+
+[role="quick-margin-list"]
+* PAYGO 제공에 가입하려면 https://aws.amazon.com/marketplace/pp/prodview-oorxakq6lq7m4?sr=0-8&ref_=beagle&applicationId=AWSMPContessa["AWS 마켓플레이스"^] , https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-manager?tab=Overview["Azure 마켓플레이스"^] , 또는 https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project&rif_reserved["GCP 마켓플레이스"^] , *구독*을 선택하고 안내를 따르세요.
+* Cloud Tiering BYOL 라이선스를 사용하여 지불하려면 mailto:ng-cloud-tiering@netapp.com?subject=Licensing[구매해야 하는 경우 문의]으로 이메일을 보내십시오.link:https://docs.netapp.com/us-en/bluexp-digital-wallet/task-manage-data-services-licenses.html["NetApp 콘솔에 추가하세요"^] . .
+
+
+
+
+== 요구 사항
+
+ONTAP 클러스터에 대한 지원을 확인하고, 네트워킹을 설정하고, 개체 스토리지를 준비합니다.
+
+다음 이미지는 각 구성 요소와 구성 요소 간에 준비해야 하는 연결을 보여줍니다.
+
+image:diagram_cloud_tiering_s3_compat.png["온프레미스 에이전트에 연결된 Cloud Tiering 서비스, ONTAP 클러스터에 연결된 에이전트, ONTAP 클러스터와 개체 스토리지 간의 연결을 보여주는 아키텍처 이미지입니다.  활성 데이터는 ONTAP 클러스터에 저장되고, 비활성 데이터는 개체 스토리지에 저장됩니다."]
+
+
+NOTE: 에이전트와 S3 호환 개체 스토리지 서버 간의 통신은 개체 스토리지 설정을 위한 것입니다.
+
+
+
+=== ONTAP 클러스터 준비
+
+S3 호환 개체 스토리지에 데이터를 계층화할 때 소스 ONTAP 클러스터는 다음 요구 사항을 충족해야 합니다.
+
+지원되는 ONTAP 플랫폼:: AFF 시스템이나 FAS 시스템의 데이터를 SSD 집계 또는 HDD 집계를 통해 계층화할 수 있습니다.
+지원되는 ONTAP 버전:: ONTAP 9.8 이상
+클러스터 네트워킹 요구 사항::
++
+--
+* ONTAP 클러스터는 사용자가 지정한 포트를 통해 S3 호환 개체 스토리지에 HTTPS 연결을 시작합니다(포트는 계층화 설정 중에 구성 가능).
++
+소스 ONTAP 시스템은 개체 스토리지에서 데이터를 읽고 씁니다.  객체 스토리지는 결코 시작되지 않고, 단지 응답만 합니다.
+
+* 귀하의 사업장 내에 상주하는 에이전트의 인바운드 연결이 필요합니다.
++
+클러스터와 Cloud Tiering 서비스 간의 연결은 필요하지 않습니다.
+
+* 계층화하려는 볼륨을 호스팅하는 각 ONTAP 노드에는 클러스터 간 LIF가 필요합니다.  LIF는 ONTAP 개체 스토리지에 연결하는 데 사용해야 하는 _IPspace_와 연결되어야 합니다.
++
+데이터 계층화를 설정하면 Cloud Tiering에서 사용할 IP 공간을 입력하라는 메시지가 표시됩니다.  각 LIF가 연결된 IP 공간을 선택해야 합니다.  이는 "기본" IP 공간일 수도 있고 사용자가 만든 사용자 지정 IP 공간일 수도 있습니다.  자세히 알아보세요 https://docs.netapp.com/us-en/ontap/networking/create_a_lif.html["LIFs"^] 그리고 https://docs.netapp.com/us-en/ontap/networking/standard_properties_of_ipspaces.html["IP 공간"^] .
+
+
+
+--
+지원되는 볼륨 및 집계:: Cloud Tiering에서 계층화할 수 있는 볼륨의 총 수는 ONTAP 시스템의 볼륨 수보다 적을 수 있습니다.  이는 일부 집계에서 볼륨을 계층화할 수 없기 때문입니다.  ONTAP 설명서를 참조하세요. https://docs.netapp.com/us-en/ontap/fabricpool/requirements-concept.html#functionality-or-features-not-supported-by-fabricpool["FabricPool 에서 지원하지 않는 기능 또는 특징"^] .
+
+
+
+TIP: 클라우드 티어링은 FlexVol 및 FlexGroup 볼륨을 모두 지원합니다.
+
+
+
+=== ONTAP 클러스터를 찾아보세요
+
+콜드 데이터의 계층화를 시작하려면 먼저 온프레미스 ONTAP 시스템을 콘솔에 추가해야 합니다.
+
+https://docs.netapp.com/us-en/bluexp-ontap-onprem/task-discovering-ontap.html["클러스터를 검색하는 방법을 알아보세요"^] .
+
+
+
+=== S3 호환 객체 스토리지 준비
+
+S3 호환 개체 스토리지는 다음 요구 사항을 충족해야 합니다.
+
+S3 자격 증명:: S3 호환 개체 스토리지에 계층화를 설정하면 S3 버킷을 만들거나 기존 S3 버킷을 선택하라는 메시지가 표시됩니다.  Cloud Tiering에 S3 액세스 키와 비밀 키를 제공해야 합니다.  클라우드 티어링은 키를 사용하여 버킷에 액세스합니다.
++
+--
+이러한 액세스 키는 다음 권한이 있는 사용자와 연결되어야 합니다.
+
+[source, json]
+----
+"s3:ListAllMyBuckets",
+"s3:ListBucket",
+"s3:GetObject",
+"s3:PutObject",
+"s3:DeleteObject",
+"s3:CreateBucket"
+----
+--
+
+
+
+
+=== 에이전트 생성 또는 전환
+
+클라우드에 데이터를 계층화하려면 콘솔 에이전트가 필요합니다.  S3 호환 개체 스토리지에 데이터를 계층화하는 경우, 사내에서 에이전트를 사용할 수 있어야 합니다.  새로운 에이전트를 설치하거나 현재 선택된 에이전트가 온프레미스에 있는지 확인해야 합니다.
+
+* https://docs.netapp.com/us-en/bluexp-setup-admin/concept-connectors.html["에이전트에 대해 알아보세요"^]
+* https://docs.netapp.com/us-en/bluexp-setup-admin/task-install-connector-on-prem.html["온프레미스에 에이전트 설치 및 설정"^]
+* https://docs.netapp.com/us-en/bluexp-setup-admin/task-manage-multiple-connectors.html#switch-between-connectors["에이전트 간 전환"^]
+
+
+
+
+=== 콘솔 에이전트를 위한 네트워킹 준비
+
+에이전트에 필요한 네트워크 연결이 있는지 확인하세요.
+
+.단계
+. 에이전트가 설치된 네트워크에서 다음 연결이 허용되는지 확인하세요.
++
+** 포트 443을 통한 Cloud Tiering 서비스에 대한 HTTPS 연결(https://docs.netapp.com/us-en/bluexp-setup-admin/task-set-up-networking-on-prem.html#endpoints-contacted-for-day-to-day-operations["엔드포인트 목록을 확인하세요"^] )
+** S3 호환 개체 스토리지에 대한 포트 443을 통한 HTTPS 연결
+** ONTAP 클러스터 관리 LIF에 대한 포트 443을 통한 HTTPS 연결
+
+
+
+
+
+
+== 첫 번째 클러스터에서 S3 호환 개체 스토리지로 비활성 데이터 계층화
+
+환경을 준비한 후 첫 번째 클러스터에서 비활성 데이터의 계층화를 시작합니다.
+
+.필요한 것
+* https://docs.netapp.com/us-en/bluexp-ontap-onprem/task-discovering-ontap.html["NetApp 콘솔에 온프레미스 시스템 추가"^] .
+* S3 호환 개체 스토리지 서버의 FQDN과 HTTPS 통신에 사용될 포트입니다.
+* 필요한 S3 권한이 있는 액세스 키와 비밀 키.
+
+
+.단계
+. 온프레미스 ONTAP 시스템을 선택하세요.
+. 오른쪽 패널에서 클라우드 티어링 서비스에 대해 *활성화*를 클릭합니다.
++
+image:screenshot_setup_tiering_onprem.png["온프레미스 ONTAP 시스템을 선택한 후 화면 오른쪽에 나타나는 계층화 옵션을 보여주는 스크린샷입니다."]
+
+. *개체 저장소 이름 정의*: 이 개체 저장소의 이름을 입력합니다.  이 클러스터에서 집계와 함께 사용할 수 있는 다른 개체 저장소와 고유해야 합니다.
+. *공급자 선택*: *S3 호환*을 선택하고 *계속*을 선택합니다.
+. *공급자 선택*: *S3 호환*을 선택하고 *계속*을 선택합니다.
+. *개체 저장소 만들기* 페이지의 단계를 완료하세요.
++
+.. *서버*: S3 호환 개체 스토리지 서버의 FQDN, ONTAP 서버와 HTTPS 통신에 사용해야 하는 포트, 필요한 S3 권한이 있는 계정의 액세스 키와 비밀 키를 입력합니다.
+.. *버킷*: 새로운 버킷을 추가하거나 기존 버킷을 선택하고 *계속*을 선택합니다.
+.. *버킷*: 새로운 버킷을 추가하거나 기존 버킷을 선택하고 *계속*을 선택합니다.
+.. *클러스터 네트워크*: ONTAP 개체 스토리지에 연결하는 데 사용할 IP 공간을 선택하고 *계속*을 선택합니다.
+.. *클러스터 네트워크*: ONTAP 개체 스토리지에 연결하는 데 사용할 IP 공간을 선택하고 *계속*을 선택합니다.
++
+올바른 IP 공간을 선택하면 Cloud Tiering이 ONTAP 에서 S3 호환 개체 스토리지로 연결을 설정할 수 있습니다.
+
++
+"최대 전송 속도"를 정의하여 비활성 데이터를 개체 스토리지에 업로드하는 데 사용할 수 있는 네트워크 대역폭을 설정할 수도 있습니다.  *제한됨* 라디오 버튼을 선택하고 사용 가능한 최대 대역폭을 입력하거나, *무제한*을 선택하여 제한이 없음을 나타냅니다.
+
+
+
+. _성공_ 페이지에서 *계속*을 선택하여 지금 볼륨을 설정하세요.
+. _Tier Volumes_ 페이지에서 계층화를 구성할 볼륨을 선택하고 *계속*을 선택합니다.
++
+** 모든 볼륨을 선택하려면 제목 행의 상자를 선택하십시오.image:button_backup_all_volumes.png[""] )을 클릭하고 *볼륨 구성*을 선택합니다.
+** 여러 볼륨을 선택하려면 각 볼륨의 상자를 선택하십시오.image:button_backup_1_volume.png[""] )을 클릭하고 *볼륨 구성*을 선택합니다.
+** 단일 볼륨을 선택하려면 행을 선택하세요(또는image:screenshot_edit_icon.gif["연필 아이콘 편집"] 볼륨에 대한 아이콘)입니다.
++
+image:screenshot_tiering_initial_volumes.png["단일 볼륨, 여러 볼륨 또는 모든 볼륨을 선택하는 방법과 선택한 볼륨을 수정하는 버튼을 보여주는 스크린샷입니다."]
+
+
+
+. _계층화 정책_ 대화 상자에서 계층화 정책을 선택하고, 선택적으로 선택한 볼륨에 대한 냉각 일수를 조정하고, *적용*을 선택합니다.
++
+link:concept-cloud-tiering.html#volume-tiering-policies["볼륨 티어링 정책 및 쿨링 데이에 대해 자세히 알아보세요."] .
+
++
+image:screenshot_tiering_initial_policy_settings.png["구성 가능한 계층화 정책 설정을 보여주는 스크린샷입니다."]
+
+
+
+.다음은 무엇인가요?
+link:task-licensing-cloud-tiering.html["클라우드 티어링 서비스에 가입하세요"] .
+
+클러스터의 활성 및 비활성 데이터에 대한 정보를 검토할 수 있습니다. link:task-managing-tiering.html["계층화 설정 관리에 대해 자세히 알아보세요"] .
+
+클러스터의 특정 집계에서 다른 개체 저장소로 데이터를 계층화하려는 경우 추가 개체 저장소를 만들 수도 있습니다.  또는 계층화된 데이터가 추가 개체 저장소에 복제되는 FabricPool Mirroring을 사용할 계획인 경우입니다. link:task-managing-object-storage.html["객체 저장소 관리에 대해 자세히 알아보세요"] .
