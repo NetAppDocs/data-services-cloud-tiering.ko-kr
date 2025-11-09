@@ -51,7 +51,6 @@ ONTAP 클러스터에서 AWS S3로 데이터를 계층화하는 사용량 기반
 .단계
 . NetApp Console 에서 *모빌리티 > 클라우드 계층화 > 온프레미스 대시보드*를 선택합니다.
 . _마켓플레이스 구독_ 섹션에서 Amazon Web Services 아래의 *구독*을 선택한 다음 *계속*을 선택합니다.
-. _마켓플레이스 구독_ 섹션에서 Amazon Web Services 아래의 *구독*을 선택한 다음 *계속*을 선택합니다.
 . 에서 구독하세요 https://aws.amazon.com/marketplace/pp/prodview-oorxakq6lq7m4["AWS 마켓플레이스"^] 그런 다음 NetApp Console 에 다시 로그인하여 등록을 완료하세요.
 +
 다음 영상은 그 과정을 보여줍니다.
@@ -71,7 +70,6 @@ Azure Marketplace에서 Cloud Tiering을 구독하여 ONTAP 클러스터에서 A
 .단계
 . NetApp Console 에서 *모빌리티 > 클라우드 계층화 > 온프레미스 대시보드*를 선택합니다.
 . _마켓플레이스 구독_ 섹션에서 Microsoft Azure 아래의 *구독*을 선택한 다음 *계속*을 선택합니다.
-. _마켓플레이스 구독_ 섹션에서 Microsoft Azure 아래의 *구독*을 선택한 다음 *계속*을 선택합니다.
 . 에서 구독하세요 https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-manager?tab=Overview["Azure 마켓플레이스"^] 그런 다음 NetApp Console 에 다시 로그인하여 등록을 완료하세요.
 +
 다음 영상은 그 과정을 보여줍니다.
@@ -90,7 +88,6 @@ Google Cloud Marketplace에서 Cloud Tiering을 구독하면 ONTAP 클러스터�
 [[subscribe-gcp]]
 .단계
 . NetApp Console 에서 *모빌리티 > 클라우드 계층화 > 온프레미스 대시보드*를 선택합니다.
-. _마켓플레이스 구독_ 섹션에서 Google Cloud 아래의 *구독*을 선택한 다음 *계속*을 선택합니다.
 . _마켓플레이스 구독_ 섹션에서 Google Cloud 아래의 *구독*을 선택한 다음 *계속*을 선택합니다.
 . 에서 구독하세요 https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project["구글 클라우드 마켓플레이스"^] 그런 다음 NetApp Console 에 다시 로그인하여 등록을 완료하세요.
 +
