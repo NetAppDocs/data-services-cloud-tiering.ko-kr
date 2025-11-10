@@ -183,7 +183,7 @@ TIP: StorageGRID 에 대한 계층화에는 FabricPool 또는 Cloud Tiering 라�
 
 === FabricPool 라이선스가 있는 기존 클러스터에 대한 프로세스
 
-당신이 때link:task-managing-tiering.html#discovering-additional-clusters-from-bluexp-tiering["Cloud Tiering에서 이러한 특수 클러스터 유형을 찾아보세요."] Cloud Tiering은 FabricPool 라이선스를 인식하고 해당 라이선스를 콘솔에 추가합니다.  해당 클러스터는 평소와 같이 데이터 계층화를 계속 진행합니다.  FabricPool 라이선스가 만료되면 Cloud Tiering 라이선스를 구매해야 합니다.
+당신이 때link:task-managing-tiering.html#discovering-additional-clusters-from-cloud-tiering["Cloud Tiering에서 이러한 특수 클러스터 유형을 찾아보세요."] Cloud Tiering은 FabricPool 라이선스를 인식하고 해당 라이선스를 콘솔에 추가합니다. 해당 클러스터는 평소와 같이 데이터 계층화를 계속 진행합니다. FabricPool 라이선스가 만료되면 Cloud Tiering 라이선스를 구매해야 합니다.
 
 
 
@@ -207,9 +207,9 @@ Tiering Mirror 구성의 경우 데이터가 두 개의 서로 다른 개체 스
 +
 이 시점에서는 계층화를 구성하지 마세요.
 
-. link:task-licensing-cloud-tiering.html#use-a-bluexp-tiering-byol-license["클라우드 티어링 라이선스 구매"]새로운 클러스터 또는 클러스터들에 필요한 용량을 위해서입니다.
+. link:task-licensing-cloud-tiering.html#use-a-cloud-tiering-byol-license["클라우드 티어링 라이선스 구매"]새로운 클러스터 또는 클러스터들에 필요한 용량을 위해서입니다.
 . 콘솔에서<<licenses,디지털 지갑에 라이센스를 추가하세요>> [라이센스를 추가합니다].
-. 클라우드 티어링에서link:task-managing-tiering.html#discovering-additional-clusters-from-bluexp-tiering["새로운 클러스터를 발견하다"] .
+. 클라우드 티어링에서link:task-managing-tiering.html#discovering-additional-clusters-from-cloud-tiering["새로운 클러스터를 발견하다"] .
 . 클러스터 페이지에서 다음을 선택하세요.image:screenshot_horizontal_more_button.gif["더 많은 아이콘"] 클러스터에 대해 *라이선스 배포*를 선택합니다.
 +
 image:screenshot_tiering_deploy_license.png["ONTAP 클러스터에 계층화 라이선스를 배포하는 방법을 보여주는 스크린샷입니다."]

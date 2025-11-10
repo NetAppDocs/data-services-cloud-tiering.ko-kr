@@ -22,7 +22,7 @@ NetApp Cloud Tiering 온프레미스 ONTAP 클러스터에서 비활성 데이�
 
 FabricPool Mirror를 사용하여 단일 노드 클러스터, HA 구성 클러스터, Tiering Mirror 구성의 클러스터 및 MetroCluster 구성에 대한 계층화를 구성할 수 있습니다.  클라우드 티어링 라이선스는 모든 클러스터에서 공유됩니다.
 
-https://bluexp.netapp.com/cloud-tiering-service-tco["클라우드 계층화 TCO 계산기를 사용하여 얼마나 많은 비용을 절감할 수 있는지 확인하세요."^].
+https://www.netapp.com/data-services/tiering/tco-calculator/["클라우드 계층화 TCO 계산기를 사용하여 얼마나 많은 비용을 절감할 수 있는지 확인하세요."^].
 
 
 
@@ -70,7 +70,7 @@ TIP: Cloud Volumes ONTAP 시스템은 Cloud Tiering에서 읽기 전용입니다
 * S3 호환 객체 스토리지(예: MinIO)
 
 
-Cloud Tiering 라이선스는 IBM Cloud Object Storage에 데이터를 계층화하는 클러스터와도 공유할 수 있습니다.  FabricPool 구성은 시스템 관리자 또는 ONTAP CLI를 사용하여 설정해야 하지만link:task-licensing-cloud-tiering.html#apply-bluexp-tiering-licenses-to-clusters-in-special-configurations["이러한 유형의 구성에 대한 라이선싱은 Cloud Tiering을 사용하여 완료됩니다."]
+Cloud Tiering 라이선스는 IBM Cloud Object Storage에 데이터를 계층화하는 클러스터와도 공유할 수 있습니다. FabricPool 구성은 시스템 관리자 또는 ONTAP CLI를 사용하여 설정해야 하지만link:task-licensing-cloud-tiering.html#apply-cloud-tiering-licenses-to-clusters-in-special-configurations["이러한 유형의 구성에 대한 라이선싱은 Cloud Tiering을 사용하여 완료됩니다."]
 
 
 NOTE: StorageGRID 와 같이 NAS 볼륨의 데이터를 퍼블릭 클라우드나 프라이빗 클라우드로 계층화할 수 있습니다.  SAN 프로토콜을 통해 액세스되는 데이터를 계층화하는 경우 NetApp 연결 고려 사항으로 인해 프라이빗 클라우드를 사용할 것을 권장합니다.
@@ -131,7 +131,7 @@ https://bluexp.netapp.com/pricing#tiering["가격 세부 정보 보기"^].
 
 무료 평가판 기간 동안 또는 Cloud Tiering BYOL 라이선스를 초과하지 않은 경우, 종량제 구독 요금이 청구되지 않습니다.
 
-link:task-licensing-cloud-tiering.html#use-a-bluexp-tiering-paygo-subscription["사용량에 따른 요금제 구독을 설정하는 방법을 알아보세요"].
+link:task-licensing-cloud-tiering.html#use-a-cloud-tiering-paygo-subscription["사용량에 따른 요금제 구독을 설정하는 방법을 알아보세요"].
 
 
 
@@ -147,12 +147,12 @@ Cloud Tiering은 비활성 데이터를 Amazon S3 또는 Azure로 계층화할 �
 
 NetApp 에서 *클라우드 계층화* 라이선스(이전에는 "클라우드 계층화" 라이선스라고 함)를 구매하여 자체 라이선스를 가져오세요.  1년, 2년 또는 3년 기간의 라이선스를 구매하고 원하는 만큼의 계층화 용량을 지정할 수 있습니다(최소 10TiB부터 시작).  BYOL 클라우드 티어링 라이선스는 여러 온프레미스 ONTAP 클러스터에서 사용할 수 있는 _플로팅_ 라이선스입니다.  Cloud Tiering 라이선스에 정의한 총 계층화 용량은 모든 온프레미스 클러스터에서 사용할 수 있습니다.
 
-클라우드 계층화 라이선스를 구매한 후에는 NetApp Console 에 라이선스를 추가해야 합니다. link:task-licensing-cloud-tiering.html#use-a-bluexp-tiering-byol-license["Cloud Tiering BYOL 라이선스를 사용하는 방법을 알아보세요."] .
+클라우드 계층화 라이선스를 구매한 후에는 NetApp Console 에 라이선스를 추가해야 합니다. link:task-licensing-cloud-tiering.html#use-a-cloud-tiering-byol-license["Cloud Tiering BYOL 라이선스를 사용하는 방법을 알아보세요."].
 
 위에서 언급한 대로 BYOL 라이선스를 구매한 경우에도 사용량에 따라 요금을 지불하는 구독을 설정하는 것이 좋습니다.
 
 
-NOTE: 2021년 8월부터 기존의 * FabricPool* 라이선스가 *Cloud Tiering* 라이선스로 대체되었습니다. link:task-licensing-cloud-tiering.html#bluexp-tiering-byol-licensing-starting-in-2021["Cloud Tiering 라이선스가 FabricPool 라이선스와 어떻게 다른지 자세히 알아보세요."] .
+NOTE: 2021년 8월부터 기존의 * FabricPool* 라이선스가 *Cloud Tiering* 라이선스로 대체되었습니다. link:task-licensing-cloud-tiering.html#cloud-tiering-byol-licensing-starting-in-2021["Cloud Tiering 라이선스가 FabricPool 라이선스와 어떻게 다른지 자세히 알아보세요."].
 
 
 
