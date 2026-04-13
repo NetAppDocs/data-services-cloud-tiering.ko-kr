@@ -90,7 +90,6 @@
   <block id="09c7ee4be0db4e9240de27e931212553" category="inline-link-macro">사용량에 따른 요금제 구독을 설정하는 방법을 알아보세요</block>
   <block id="421539f25601331f9f5f1e59cdb43e21" category="section-title">연간 계약</block>
   <block id="87e8f36409134ebae86e6c9935f8f457" category="paragraph">Cloud Tiering은 비활성 데이터를 Amazon S3 또는 Azure로 계층화할 때 연간 계약을 제공합니다.  1년, 2년, 3년 단위로 이용 가능합니다.</block>
-  <block id="8a2304319d2e68c914c95280f8d1b529" category="paragraph">현재 Google CLoud로 계층화할 때 연간 계약은 지원되지 않습니다.</block>
   <block id="fce5aebaf837d23e27b8a9d6a54a6467" category="section-title">면허증을 직접 가져오세요</block>
   <block id="ce9d3c4a1b1b4d789b90174349030aaf" category="paragraph">NetApp 에서 *클라우드 계층화* 라이선스(이전에는 "클라우드 계층화" 라이선스라고 함)를 구매하여 자체 라이선스를 가져오세요.  1년, 2년 또는 3년 기간의 라이선스를 구매하고 원하는 만큼의 계층화 용량을 지정할 수 있습니다(최소 10TiB부터 시작).  BYOL 클라우드 티어링 라이선스는 여러 온프레미스 ONTAP 클러스터에서 사용할 수 있는 _플로팅_ 라이선스입니다.  Cloud Tiering 라이선스에 정의한 총 계층화 용량은 모든 온프레미스 클러스터에서 사용할 수 있습니다.</block>
   <block id="7b31eba1fa6d2aa1d3bf4ddb10d4b302" category="inline-link-macro">Cloud Tiering BYOL 라이선스를 사용하는 방법을 알아보세요.</block>
@@ -499,112 +498,10 @@
   <block id="6d9dd74e7709ef802d299966f7898f6b" category="list-text">*사례 보기*: 특정 사례에 대한 전체 세부 정보를 확인하세요.</block>
   <block id="8e6b52a532a4fbbfc98dca3ebfa5f1e6" category="list-text">*사례 메모 업데이트*: 문제에 대한 추가 세부 정보를 제공하거나 *파일 업로드*를 선택하여 최대 5개의 파일을 첨부하세요.</block>
   <block id="bb6d5d351525342dd6b3cf4d15b6f298" category="list-text">*사건 종결*: 사건을 종결하는 이유를 자세히 입력하고 *사건 종결*을 선택하세요.</block>
-  <block id="47295dc1d9c97151e1239a3f1c8e00f7" category="summary">NetApp Cloud Tiering 의 30일 무료 평가판은 첫 번째 클러스터에서 계층화를 설정할 때 시작됩니다.  무료 평가판이 종료된 후에는 클라우드 공급업체의 마켓플레이스에서 사용량 기반 요금제나 연간 구독을 통해 클라우드 티어링 비용을 지불하거나, NetApp 의 BYOL 라이선스를 구매하거나, 두 가지를 결합한 방식을 사용해야 합니다.</block>
   <block id="d4cdf3ad28a947017bac9a28090b4755" category="doc">NetApp Cloud Tiering 에 대한 라이선싱 설정</block>
-  <block id="80186f1230af2267e2c2e4d2ab8c030e" category="paragraph">계속 읽기 전에 몇 가지 참고 사항을 알려드립니다.</block>
-  <block id="62c129e97c5ee80c24e44b10e3b78808" category="list-text">클라우드 공급업체의 마켓플레이스에서 이미 Cloud Tiering(PAYGO)을 구독한 경우 온프레미스 ONTAP 시스템의 Cloud Tiering에도 자동으로 구독됩니다.  클라우드 티어링 *온프레미스 대시보드* 탭에서 활성화된 구독을 확인할 수 있습니다.  다시 구독할 필요는 없습니다.  NetApp Console 에서 활성화된 구독을 확인할 수 있습니다.</block>
-  <block id="d13664b79e47261c681469ef4114071a" category="list-text">BYOL 클라우드 계층화 라이선스(이전에는 "클라우드 계층화" 라이선스라고 함)는 NetApp Console 조직 내 여러 온프레미스 ONTAP 클러스터에서 사용할 수 있는 _플로팅_ 라이선스입니다.  이는 과거에 각 클러스터에 대해 _FabricPool_ 라이선스를 구매했던 것과는 다르고 훨씬 쉽습니다.</block>
-  <block id="d181cf69cc22712ade6a0c67ca47d824" category="list-text">StorageGRID 에 데이터를 계층화할 때는 비용이 청구되지 않으므로 BYOL 라이선스나 PAYGO 등록이 필요하지 않습니다.  이 계층형 데이터는 라이선스에서 구매한 용량에 포함되지 않습니다.</block>
-  <block id="d42e6c6c0bd600babc489630de73058f" category="inline-link-macro">클라우드 계층화에 대한 라이선싱 작동 방식에 대해 자세히 알아보세요.</block>
-  <block id="6cba13359069adfeb75d96e433421999" category="paragraph"><block ref="4e584f79910f9a3a7129b23d958f91fd" category="inline-link-macro-rx"></block>.</block>
-  <block id="4e06fcbdd87dccfbea49bd9c084521b4" category="paragraph">Cloud Tiering 라이선스가 없으면 첫 번째 클러스터에 계층화를 설정하면 Cloud Tiering의 30일 무료 평가판이 시작됩니다.  30일 무료 체험 기간이 종료되면 사용량 기반 구독, 연간 구독, BYOL 라이선스 또는 이 둘을 조합하여 Cloud Tiering 비용을 지불해야 합니다.</block>
-  <block id="2c747bf611c932e034372048fa569c80" category="section-title">Cloud Tiering PAYGO 구독을 사용하세요</block>
-  <block id="bf842c9a2352dda7ee452c6389dda8b8" category="paragraph">클라우드 공급업체의 마켓플레이스에서 사용량에 따라 요금을 지불하는 구독을 통해 Cloud Volumes ONTAP 시스템과 Cloud Tiering과 같은 많은 클라우드 데이터 서비스를 사용할 수 있는 라이선스를 얻을 수 있습니다.</block>
-  <block id="04feed588dafed177e545fb17eb2abf7" category="inline-link-macro">구독을 보고 관리하세요.</block>
-  <block id="64f5478313f04f7c5a2169052a948d5d" category="paragraph">Cloud Tiering에 가입한 후 콘솔에서 구독을 관리할 수 있습니다.<block ref="a6785eaf43e5124756d493e8691d84c1" category="inline-link-macro-rx"></block></block>
-  <block id="a70c9916d691b1eb3e72bf59caa27ce2" category="section-title">AWS Marketplace에서 구독하기</block>
-  <block id="df5f272e4f3bf41f36db01caae48f251" category="paragraph">ONTAP 클러스터에서 AWS S3로 데이터를 계층화하는 사용량 기반 구독을 설정하려면 AWS Marketplace에서 Cloud Tiering을 구독하세요.</block>
-  <block id="dde92a9474b6efeb2d8329883e015807" category="list-text">NetApp Console 에서 *모빌리티 &gt; 클라우드 계층화 &gt; 온프레미스 대시보드*를 선택합니다.</block>
-  <block id="d41c784e08f185af1ce1746989cf91d8" category="list-text">_마켓플레이스 구독_ 섹션에서 Amazon Web Services 아래의 *구독*을 선택한 다음 *계속*을 선택합니다.</block>
   <block id="cab27dc53edb571cac663ce2e16450dc" category="inline-link">AWS 마켓플레이스</block>
-  <block id="91dc59a4f1029bfd114c7080d99c6a7f" category="list-text">에서 구독하세요<block ref="60fa25c896f0169de9e5a75989c9f27f" category="inline-link-rx"></block> 그런 다음 NetApp Console 에 다시 로그인하여 등록을 완료하세요.</block>
-  <block id="03909f0465e674709c33e446a2657166" category="paragraph">다음 영상은 그 과정을 보여줍니다.</block>
-  <block id="219885055ccb92e461f88b9ecd25570e" category="video-title">AWS Marketplace에서 구독하세요</block>
-  <block id="8feab303f9a851219461fc3a5bccb103" category="section-title">Azure Marketplace에서 구독</block>
-  <block id="852bc4eb9abdefdd230a032e3bb1c3f3" category="paragraph">Azure Marketplace에서 Cloud Tiering을 구독하여 ONTAP 클러스터에서 Azure Blob 스토리지로 데이터를 계층화하는 사용량 기반 구독을 설정하세요.</block>
-  <block id="77824143d5448055b1a9e42829dff0fc" category="list-text">_마켓플레이스 구독_ 섹션에서 Microsoft Azure 아래의 *구독*을 선택한 다음 *계속*을 선택합니다.</block>
   <block id="21e74b3c28d006317f38a2bc8eb1da3b" category="inline-link">Azure 마켓플레이스</block>
-  <block id="7c106a7be3a83dd7a651793ee01ca157" category="list-text">에서 구독하세요<block ref="41a6e7dc73b2f1e43bd8c26c6ce83782" category="inline-link-rx"></block> 그런 다음 NetApp Console 에 다시 로그인하여 등록을 완료하세요.</block>
-  <block id="0657ebef311800dc99a68ad40de2965a" category="video-title">Azure Marketplace에서 구독</block>
-  <block id="4df3a4b719debe027add38476f2fd8fd" category="section-title">Google Cloud Marketplace에서 구독하기</block>
-  <block id="28843f547e457e1963cacff34902c4c6" category="paragraph">Google Cloud Marketplace에서 Cloud Tiering을 구독하면 ONTAP 클러스터에서 Google Cloud Storage로 데이터를 계층화하는 사용량 기반 구독을 설정할 수 있습니다.</block>
-  <block id="3d45a9bf38b0873906b93acb9347b2af" category="list-text">_마켓플레이스 구독_ 섹션에서 Google Cloud 아래의 *구독*을 선택한 다음 *계속*을 선택합니다.</block>
-  <block id="98ad2c075d2fb10da4cf15c985c3f43f" category="inline-link">구글 클라우드 마켓플레이스</block>
-  <block id="a75ad0bcc2a886daf2d9c3cbfa521bc9" category="list-text">에서 구독하세요<block ref="82ddec44156571798c68c5bde2400da5" category="inline-link-rx"></block> 그런 다음 NetApp Console 에 다시 로그인하여 등록을 완료하세요.</block>
-  <block id="c9b7d3dfb0a91a99ab5deba597b6741a" category="video-title">Google Cloud Marketplace에서 구독하세요</block>
-  <block id="66145e361f72b54aa011f59d543dfb08" category="section-title">연간 계약을 사용하세요</block>
-  <block id="d096054edb7faff2ef0d9f1b47311274" category="paragraph">연간 계약을 구매하여 매년 클라우드 티어링 비용을 지불하세요.  연간 계약은 1년, 2년, 3년 기간으로 가능합니다.</block>
-  <block id="2351127acb653fd60dafc73c8efcb79d" category="inline-link">AWS Marketplace 페이지</block>
-  <block id="54b98a81c2ba2da3e9c721b03a4585b5" category="inline-link">구독을 AWS 자격 증명과 연결합니다.</block>
-  <block id="b32259fac98434133e04f9d5edeccc2f" category="paragraph">비활성 데이터를 AWS에 계층화할 때 연간 계약을 구독할 수 있습니다.<block ref="85c21eb306ec4bcbda7252ca6117fc5c" category="inline-link-rx"></block> .  이 옵션을 사용하려면 Marketplace 페이지에서 구독을 설정한 다음<block ref="3e7d826ab39799649c48f6e2f8f11222" category="inline-link-rx"></block> .</block>
-  <block id="bd0202b4a5e368ede75c41822527f8dd" category="inline-link">Azure Marketplace 페이지</block>
-  <block id="f201c550f444b5128aeb063bf930d1e2" category="inline-link">구독을 Azure 자격 증명과 연결합니다.</block>
-  <block id="56623ade00abb157c138588791032ca9" category="paragraph">비활성 데이터를 Azure에 계층화할 때 연간 계약을 구독할 수 있습니다.<block ref="d5a65c1c4876b0fa6968c9e08ffea7e8" category="inline-link-rx"></block> .  이 옵션을 사용하려면 Marketplace 페이지에서 구독을 설정한 다음<block ref="81924c3896adc46721210987cc1f149c" category="inline-link-rx"></block> .</block>
   <block id="77d720d97cc99bdd67ce50e58655dc3f" category="paragraph">현재 Google Cloud로 계층화할 때 연간 계약은 지원되지 않습니다.</block>
-  <block id="8b09b5b1748988787957d62eb22076ff" category="section-title">Cloud Tiering BYOL 라이선스 사용</block>
-  <block id="dd5858b636f3787f9dbc860d3add3563" category="paragraph">NetApp 의 BYOL(Bring Your Own License)은 1년, 2년 또는 3년 기간을 제공합니다.  BYOL *클라우드 계층화* 라이선스(이전에는 "클라우드 계층화" 라이선스라고 함)는 NetApp Console 조직 내 여러 온프레미스 ONTAP 클러스터에서 사용할 수 있는 _플로팅_ 라이선스입니다.  Cloud Tiering 라이선스에 정의된 총 계층화 용량은 *모든* 온프레미스 클러스터에서 공유되므로 초기 라이선스 부여 및 갱신이 쉽습니다.  계층형 BYOL 라이선스의 최소 용량은 10TiB부터 시작합니다.</block>
-  <block id="32d21336f5ff01b8e920d65646fad172" category="paragraph">클라우드 티어링 라이선스가 없으신 경우, 당사에 문의하여 구매하세요.</block>
-  <block id="7d7553997a3a5a75a3b0c10d87de471a" category="list-text">NetApp 영업 담당자에게 문의하세요.</block>
-  <block id="1952ddeca0b71a5d88548a44205f2c9f" category="list-text">NetApp 지원팀에 문의하세요.</block>
-  <block id="6aa300e24ddf3ee5a99bbb1cf5bb4a72" category="inline-link">자세한 내용은 여기를 참조하세요</block>
-  <block id="0f199f0273e305ba4201471ea51e0fda" category="paragraph">선택적으로, 사용하지 않을 Cloud Volumes ONTAP 의 할당되지 않은 노드 기반 라이선스가 있는 경우 동일한 달러 환산 가치와 동일한 만료 날짜를 가진 Cloud Tiering 라이선스로 변환할 수 있습니다.<block ref="f4c32a82791cf9fc58c736c0aed05092" category="inline-link-rx"></block> .</block>
-  <block id="f0c53f91250600feccf10114405117b1" category="inline-link-macro">라이선스를 관리하는 방법을 알아보세요.</block>
-  <block id="61c1df2a806ec005f5e026cf7e67bcac" category="paragraph">콘솔에서 Cloud Tiering BYOL 라이선스를 관리합니다.  새로운 라이선스를 추가하고 기존 라이선스를 업데이트할 수 있습니다.<block ref="91c9b0ce19e147acb9e693aa326ddc85" category="inline-link-macro-rx"></block></block>
-  <block id="b3419660fa710eee3796f588bd118539" category="section-title">2021년부터 시작되는 클라우드 티어링 BYOL 라이선싱</block>
-  <block id="4ade12024fa0d5b968287596f2637a52" category="paragraph">새로운 *클라우드 계층화* 라이선스는 클라우드 계층화 서비스를 사용하여 NetApp Console 에서 지원되는 계층화 구성을 위해 2021년 8월에 도입되었습니다.  NetApp Console 현재 다음 클라우드 스토리지에 대한 계층화를 지원합니다: Amazon S3, Azure Blob 스토리지, Google Cloud Storage, NetApp StorageGRID 및 S3 호환 개체 스토리지.</block>
-  <block id="beecf2fd8c511928c5d65a11860f7c21" category="paragraph">과거에 온프레미스 ONTAP 데이터를 클라우드로 계층화하는 데 사용했던 * FabricPool * 라이선스는 인터넷 접속이 없는 사이트(다크 사이트라고도 함)에 ONTAP 배포하고 IBM Cloud Object Storage에 구성을 계층화하는 경우에만 유지됩니다.  이러한 유형의 구성을 사용하는 경우 System Manager나 ONTAP CLI를 사용하여 각 클러스터에 FabricPool 라이선스를 설치합니다.</block>
-  <block id="b5a6f9ddeef29501280ea54ee2e1a6a9" category="admonition">StorageGRID 에 대한 계층화에는 FabricPool 또는 Cloud Tiering 라이선스가 필요하지 않습니다.</block>
-  <block id="63b75697f87dc9e5a0f1c93ebf6056b5" category="paragraph">현재 FabricPool 라이선스를 사용 중인 경우 FabricPool 라이선스가 만료일 또는 최대 용량에 도달할 때까지 영향을 받지 않습니다.  라이선스를 업데이트해야 할 경우 또는 그보다 일찍 NetApp ​​문의하여 클라우드로 데이터를 계층화하는 데 방해가 되지 않는지 확인하세요.</block>
-  <block id="d2aa8768a477bdec7c3c1ce2d54f14c0" category="list-text">콘솔에서 지원되는 구성을 사용하는 경우 FabricPool 라이선스가 Cloud Tiering 라이선스로 변환되어 콘솔에 표시됩니다.  초기 라이선스가 만료되면 Cloud Tiering 라이선스를 업데이트해야 합니다.</block>
-  <block id="bc09c653f410975fa6dd7b35c33b6c6c" category="inline-link">System Manager를 사용하여 계층화 라이선스를 부여하는 방법을 확인하세요.</block>
-  <block id="399a2a1becfc475dfe9888938f76ff3c" category="list-text">콘솔에서 지원되지 않는 구성을 사용하는 경우 FabricPool 라이선스를 계속 사용하게 됩니다.<block ref="f4b8492105dcaca906c2ce90b9ccab9e" category="inline-link-rx"></block> .</block>
-  <block id="a00fd369198fb13481097340d501bf38" category="paragraph">두 가지 라이센스에 대해 알아야 할 몇 가지 사항은 다음과 같습니다.</block>
-  <block id="d7050f5be573fbec3d0b437870a3a20d" category="cell">클라우드 티어링 라이선스</block>
-  <block id="af6f7538512432a33b6eb5ae90974311" category="cell">FabricPool 라이센스</block>
-  <block id="fea02835528f4e4b182606c16346ded7" category="cell">이는 여러 온프레미스 ONTAP 클러스터에서 사용할 수 있는 _플로팅_ 라이선스입니다.</block>
-  <block id="7ef7e4f14899acc64a8c7b40a40b0c18" category="cell">이는 클러스터당 라이선스로, _모든_ 클러스터에 대해 구매하여 라이선스를 부여합니다.</block>
-  <block id="0526523bc353ee275b0e2bf1521b5ac9" category="cell">NetApp Console 에 등록되어 있습니다.</block>
-  <block id="a63ad8d8cc3d36cf738227cc01faa143" category="cell">시스템 관리자나 ONTAP CLI를 사용하여 개별 클러스터에 적용됩니다.</block>
-  <block id="0f6d516038c14f2a2526568d93f78db8" category="cell">계층화 구성 및 관리 작업은 NetApp Console 의 클라우드 계층화 서비스를 통해 수행됩니다.</block>
-  <block id="a7bd9725f68ab51f56b292638f876d9b" category="cell">계층화 구성 및 관리 작업은 System Manager나 ONTAP CLI를 통해 수행됩니다.</block>
-  <block id="3eb0bcea83ab734f87536886d1331c74" category="cell">계층화가 구성되면 무료 평가판을 사용하여 30일 동안 라이선스 없이 계층화 서비스를 사용할 수 있습니다.</block>
-  <block id="0f54a92e132940776f23febb26ca8ceb" category="cell">구성이 완료되면 처음 10TB의 데이터를 무료로 계층화할 수 있습니다.</block>
-  <block id="1a2775c2033d975fe4c3cac33877ff93" category="section-title">클라우드 티어링 라이선스 관리</block>
-  <block id="fa007ebe399bde224b26e4cfb30db9bf" category="paragraph">라이선스 기간이 만료일에 가까워지거나 라이선스 용량이 한도에 도달하면 클라우드 티어링과 콘솔에서 알림을 받게 됩니다.</block>
-  <block id="ccff941d8f4885bcbcfd3639103bebe7" category="inline-link">라이선스 관리에 대해 알아보세요</block>
-  <block id="0970f6120d94a50520d76c0f63000f6d" category="paragraph">콘솔을 통해 기존 라이선스를 업데이트하고, 라이선스 상태를 보고, 새 라이선스를 추가할 수 있습니다.<block ref="bb882bdc6ec13e200eceea14292fcaf3" category="inline-link-rx"></block> .</block>
-  <block id="d99641589694e93765fada1790db2a0e" category="section-title">특수 구성의 클러스터에 Cloud Tiering 라이선스 적용</block>
-  <block id="6b96b48c014b5645274b443e9b351af2" category="paragraph">다음 구성의 ONTAP 클러스터는 Cloud Tiering 라이선스를 사용할 수 있지만 라이선스는 단일 노드 클러스터, HA 구성 클러스터, Tiering Mirror 구성의 클러스터 및 FabricPool Mirror를 사용하는 MetroCluster 구성과는 다른 방식으로 적용해야 합니다.</block>
-  <block id="04b39654e6e5a443553195d1e2779190" category="list-text">IBM Cloud Object Storage에 계층화된 클러스터</block>
-  <block id="788e22af5bb5495bee686a619fa97145" category="list-text">"다크 사이트"에 설치된 클러스터</block>
-  <block id="c8fe0ffee9071759c56b9a7d98bae676" category="section-title">FabricPool 라이선스가 있는 기존 클러스터에 대한 프로세스</block>
-  <block id="1451b23352470f925dac87a3da139fca" category="inline-link-macro">Cloud Tiering에서 이러한 특수 클러스터 유형을 찾아보세요.</block>
-  <block id="eb5050df74a7237bec4864cad6113b55" category="section-title">새로 생성된 클러스터에 대한 프로세스</block>
-  <block id="9cf61e4fc9ad253b398c1c3be905176d" category="paragraph">Cloud Tiering에서 일반적인 클러스터를 발견하면 Cloud Tiering 인터페이스를 사용하여 계층화를 구성합니다.  이런 경우 다음과 같은 작업이 발생합니다.</block>
-  <block id="0c61daf569ae994053d87f8ed15c641d" category="list-text">"부모" 클라우드 티어링 라이선스는 모든 클러스터에서 티어링에 사용되는 용량을 추적하여 라이선스에 충분한 용량이 있는지 확인합니다.  총 라이선스 용량과 만료 날짜는 콘솔에 표시됩니다.</block>
-  <block id="7598b57246c073bebfc5a46a79eecdd5" category="list-text">"자식" 계층 라이선스는 "부모" 라이선스와 통신하기 위해 각 클러스터에 자동으로 설치됩니다.</block>
-  <block id="6a20454f9405b48e4d24bf4c97b565d2" category="admonition">시스템 관리자나 ONTAP CLI에서 "자식" 라이선스에 대해 표시되는 라이선스 용량 및 만료 날짜는 실제 정보가 아니므로 정보가 달라도 걱정하지 마세요.  이러한 값은 Cloud Tiering 소프트웨어에 의해 내부적으로 관리됩니다.  실제 정보는 콘솔에서 추적됩니다.</block>
-  <block id="5c47f5b94c062cb59e1084e7104a35ad" category="paragraph">위에 나열된 두 가지 구성의 경우, System Manager나 ONTAP CLI를 사용하여 계층화를 구성해야 합니다(Cloud Tiering 인터페이스를 사용해서는 안 됨).  따라서 이런 경우에는 Cloud Tiering 인터페이스에서 수동으로 "자식" 라이선스를 해당 클러스터에 푸시해야 합니다.</block>
-  <block id="8646b811e05af9f8486c9225ac0c39f3" category="paragraph">Tiering Mirror 구성의 경우 데이터가 두 개의 서로 다른 개체 스토리지 위치에 계층화되므로 두 위치 모두에 데이터를 계층화할 수 있는 충분한 용량이 있는 라이선스를 구매해야 합니다.</block>
-  <block id="f457a5079118a07f91a021318abf923e" category="list-text">System Manager나 ONTAP CLI를 사용하여 ONTAP 클러스터를 설치하고 구성합니다.</block>
-  <block id="a91bdb81c68f1a37a469fa1d5933a14b" category="paragraph">이 시점에서는 계층화를 구성하지 마세요.</block>
-  <block id="a49fb32c3dc821374473edfc6c43950a" category="inline-link-macro">클라우드 티어링 라이선스 구매</block>
-  <block id="475dfcedf495d633f40c9b9bfd57b55a" category="inline-xref">디지털 지갑에 라이센스를 추가하세요</block>
-  <block id="fead545b6a0a8d6e90228df1c8e35f19" category="list-text">콘솔에서<block ref="8856d761fe4c327e372ed95088b45b9a" category="inline-xref-macro-rx"></block> [라이센스를 추가합니다].</block>
-  <block id="2ef78cf4a1d7bf5f762483337e16bb3b" category="inline-link-macro">새로운 클러스터를 발견하다</block>
-  <block id="8f0a75d2d5a82f31f2cf069c3b0ee684" category="inline-image-macro">더 많은 아이콘</block>
-  <block id="8e089abf3b3debe599fb2866aabd4320" category="list-text">클러스터 페이지에서 다음을 선택하세요.<block ref="50acd719b1954eb4890c002b3b5e71a6" category="inline-image-macro-rx" type="image"></block> 클러스터에 대해 *라이선스 배포*를 선택합니다.</block>
-  <block id="b84ead730259e42d0aaa3247f1351b36" category="inline-image-macro">ONTAP 클러스터에 계층화 라이선스를 배포하는 방법을 보여주는 스크린샷입니다.</block>
-  <block id="54cfdff2d2e56824adbc46c622ea54b0" category="paragraph"><block ref="54cfdff2d2e56824adbc46c622ea54b0" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="c4eff2f1ba49500ec073f2a1087a6a62" category="list-text">_라이선스 배포_ 대화 상자에서 *배포*를 선택합니다.</block>
-  <block id="9b0c8b391da3036b3219d496d996a102" category="paragraph">자식 라이선스는 ONTAP 클러스터에 배포됩니다.</block>
-  <block id="8b0a08ec64fa62214a614acb1efe653a" category="list-text">시스템 관리자나 ONTAP CLI로 돌아가서 계층화 구성을 설정하세요.</block>
-  <block id="4bd3288276aa6f67f33d76d6902047a2" category="inline-link">FabricPool 미러 구성 정보</block>
-  <block id="b197b4bf8520425c8c0b02a971bb8d16" category="paragraph"><block ref="b197b4bf8520425c8c0b02a971bb8d16" category="inline-link-rx"></block></block>
-  <block id="d01fd2b5b65b8c38cd7db8dbebfd0ac6" category="inline-link">FabricPool MetroCluster 구성 정보</block>
-  <block id="6dfc91892c8d766a3db42ec08d3c133e" category="paragraph"><block ref="6dfc91892c8d766a3db42ec08d3c133e" category="inline-link-rx"></block></block>
-  <block id="653000cdcda1dc1026b9ce4d1c8f33bd" category="inline-link">IBM Cloud Object Storage 정보로의 계층화</block>
-  <block id="7c14243eb88d8593d5e3377a174647d2" category="paragraph"><block ref="7c14243eb88d8593d5e3377a174647d2" category="inline-link-rx"></block></block>
   <block id="ca9f4f35a593196b4cd509de82138f42" category="summary">온프레미스 ONTAP 클러스터를 구성하여 특정 개체 스토리지에 데이터를 계층화한 후 NetApp Cloud Tiering 에서 추가 개체 스토리지 작업을 수행할 수 있습니다.  새로운 개체 스토리지를 추가하고, 계층화된 데이터를 보조 개체 스토리지로 미러링하고, 기본 개체 스토리지와 미러 개체 스토리지를 교체하고, 집계에서 미러링된 개체 저장소를 제거하는 등의 작업이 가능합니다.</block>
   <block id="9c99b502766cd4588e110c3ba482e7b5" category="doc">NetApp Cloud Tiering 에서 데이터 계층화에 사용되는 개체 스토리지 관리</block>
   <block id="16f6208ef37c5366aebe53da32612604" category="paragraph">온프레미스 ONTAP 클러스터를 구성하여 특정 개체 스토리지에 데이터를 계층화한 후 NetApp Cloud Tiering 사용하여 추가 개체 스토리지 작업을 수행할 수 있습니다.  새로운 개체 스토리지를 추가하고, 계층화된 데이터를 보조 개체 스토리지로 미러링하고, 기본 개체 스토리지와 미러 개체 스토리지를 교체하고, 집계에서 미러링된 개체 저장소를 제거하는 등의 작업이 가능합니다.</block>
@@ -826,9 +723,7 @@
   <block id="e9b1f53d6cabb3394833a4e102eb6a69" category="section-title">NetApp 의 새로운 기능</block>
   <block id="c20c107d0d4eef6351660f3590324232" category="paragraph">NetApp 처음 사용하시고 NSS 계정이 없으신 경우 아래의 각 단계를 따르세요.</block>
   <block id="b50f0a46135bcb7083b1f2f82032fc26" category="inline-image-macro">지원이 첫 번째 옵션으로 나열된 도움말 메뉴의 스크린샷</block>
-  <block id="e8d4092baef6680c6a35d5228ae31de2" category="paragraph"><block ref="e8d4092baef6680c6a35d5228ae31de2" category="inline-image-macro-rx" type="image"></block></block>
   <block id="2974170a8b1b5b4a2ac69aacd4c1c9c3" category="list-text">지원 등록 페이지에서 계정 ID 일련 번호를 찾으세요.</block>
-  <block id="379f9cd57d97013f3f7fdd24f692a0b1" category="paragraph"><block ref="379f9cd57d97013f3f7fdd24f692a0b1" category="inline-image-macro-rx" type="image"></block></block>
   <block id="dd50e314c18933734174c1156dd9237f" category="inline-link">NetApp 지원 등록 사이트</block>
   <block id="78f94e749b89d69dcbf3baff21ccb958" category="list-text">로 이동<block ref="e1c4be66250fd76d5c52bfe2cb7daee2" category="inline-link-rx"></block> *저는 등록된 NetApp 고객이 아닙니다*를 선택하세요.</block>
   <block id="d4f633ef130727b2776fa7f45024ca7d" category="list-text">필수 입력란(빨간색 별표가 있는 항목)을 작성해 주세요.</block>
@@ -856,8 +751,6 @@
   <block id="a04a3a5322782e8c18d0d64be7e1ccbc" category="paragraph">기존 고객 수준 NSS 계정이 있고 파트너 수준 계정을 추가하려는 경우에도 마찬가지입니다.</block>
   <block id="1afe8a81cfddc9fa9559e272bb6b9496" category="list-text">로그인에 성공하면 NetApp NSS 사용자 이름을 저장합니다.</block>
   <block id="1dcb63fd55c4d22e87cb32275b8cc808" category="inline-image-macro">세 개의 수평 점으로 구성된 아이콘</block>
-  <block id="0dfcbbbe02d3e96f8ad78782e8772587" category="paragraph">이는 귀하의 이메일에 매핑되는 시스템 생성 ID입니다. *NSS 관리* 페이지에서 이메일을 표시할 수 있습니다.<block ref="5151db0ded96d46f40ae09b5e5b167a1" category="inline-image-macro-rx" type="image"></block> 메뉴.</block>
-  <block id="fc79de85a483938f72fbcb9822ec0ae3" category="list-text">로그인 자격 증명 토큰을 새로 고쳐야 하는 경우 *자격 증명 업데이트* 옵션도 있습니다.<block ref="5151db0ded96d46f40ae09b5e5b167a1" category="inline-image-macro-rx" type="image"></block> 메뉴.</block>
   <block id="b14d512a3c64fb5df16f6721b0603c63" category="paragraph">이 옵션을 사용하면 다시 로그인하라는 메시지가 표시됩니다. 이 계정의 토큰은 90일 후에 만료됩니다. 이에 대한 알림이 게시됩니다.</block>
   <block id="1e815fba6366f359ca04df3ada68a629" category="summary">비활성 데이터를 Amazon S3에 계층화하여 온프레미스 ONTAP 클러스터의 공간을 확보하세요.</block>
   <block id="4f14f95613078b00f83b67ec7531e02d" category="doc">NetApp Cloud Tiering 에서 온프레미스 ONTAP 클러스터의 데이터를 Amazon S3로 계층화</block>
@@ -872,8 +765,6 @@
   <block id="aada29daee1d64ed0fe907043855cb7e" category="inline-image-macro">둘</block>
   <block id="2c6a3868135c65f9cfa432554e55a593" category="paragraph-title"><block ref="54f425ce8d89f4ed6b8a546561af5d60" category="inline-image-macro-rx" type="image"></block>콘솔 에이전트 준비</block>
   <block id="f7fcc7c2f2139e5cb13bfebee90dde37" category="paragraph">AWS VPC나 사내에 콘솔 에이전트를 이미 배포한 경우 모든 준비가 완료된 것입니다.  그렇지 않은 경우 ONTAP 데이터를 AWS S3 스토리지로 계층화하기 위한 에이전트를 만들어야 합니다.  또한 에이전트가 AWS S3에 연결할 수 있도록 네트워크 설정을 사용자 지정해야 합니다.</block>
-  <block id="4c7ba4eb148038d4b94f33fef475e6a1" category="inline-xref">에이전트를 만드는 방법과 필요한 네트워크 설정을 정의하는 방법을 알아보세요.</block>
-  <block id="75cc4ddfc5deace371775eae0c1996c5" category="paragraph"><block ref="fa6bb7b5effe2b7ea5e23a734f4acc0b" category="inline-xref-macro-rx"></block></block>
   <block id="ca8a2087e5557e317599344687a57391" category="inline-image-macro">삼</block>
   <block id="0ccb6a37cea873b6899d9aa76a81d884" category="paragraph-title"><block ref="05b2444faffd66d76e88602ea7dd353f" category="inline-image-macro-rx" type="image"></block>온프레미스 ONTAP 클러스터 준비</block>
   <block id="1f617ea578d1dda25a8d1343fc33f208" category="paragraph">NetApp Console 에서 ONTAP 클러스터를 검색하고, 클러스터가 최소 요구 사항을 충족하는지 확인하고, 클러스터가 AWS S3에 연결할 수 있도록 네트워크 설정을 사용자 지정합니다.</block>
@@ -1425,15 +1316,26 @@
   <block id="833f66976dfb40b1fff1906d00d81e43" category="paragraph">온프레미스 데이터 센터에서 VPC로 인터넷을 통해 보다 안전한 연결을 원하는 경우, 계층화 활성화 마법사에서 AWS PrivateLink 연결을 선택하는 옵션이 있습니다. 개인 IP 주소를 사용하는 VPC 엔드포인트 인터페이스를 통해 온프레미스 시스템에 연결하기 위해 VPN이나 AWS Direct Connect를 사용하려는 경우 필요합니다. 이 유형의 연결은 다음에 표시됩니다.<block ref="2050915bab4f6759cf373f4985750764" category="inline-xref-macro-rx"></block> .</block>
   <block id="e264fed64c86a30dfb5ff8b811d8fe4e" category="paragraph">이 알림은 귀하의 시스템 효율성을 높이고 저장 비용을 절감하는 데 도움이 되는 "권장 사항"입니다. 링크를 제공합니다<block ref="42e4a442d762b5369e021e8b363199d3" category="inline-link-rx"></block> 비용 절감액을 계산하는 데 도움이 됩니다.</block>
   <block id="6be39c6bfafab590f236e258f50b9b12" category="paragraph"><block ref="1c2f8aa0bfcd23a7f9487ab2cefe0855" category="inline-link-rx"></block>.</block>
-  <block id="4513a79372ed27e3c5ed54e755dd2b0b" category="paragraph">Cloud Tiering 라이선스는 IBM Cloud Object Storage에 데이터를 계층화하는 클러스터와도 공유할 수 있습니다. FabricPool 구성은 시스템 관리자 또는 ONTAP CLI를 사용하여 설정해야 하지만<block ref="ad5a72c96253a511839f7d21241e389f" category="inline-link-macro-rx"></block></block>
-  <block id="02778b04e5a037c1f79623dbe0edaeaa" category="paragraph"><block ref="ec35df1b46bc45bcde27ce05d4c1911f" category="inline-link-macro-rx"></block>.</block>
-  <block id="bc9c7ebd48973adea5231f10a190728f" category="paragraph">클라우드 계층화 라이선스를 구매한 후에는 NetApp Console 에 라이선스를 추가해야 합니다. <block ref="14bb9fa35d1b0028e213cd470536d52e" category="inline-link-macro-rx"></block>.</block>
-  <block id="5cc30a9be8f6ac2be14e01b2d4904d11" category="admonition">2021년 8월부터 기존의 * FabricPool* 라이선스가 *Cloud Tiering* 라이선스로 대체되었습니다. <block ref="22e02f8ddb60d0feddfbbce882c0c8e2" category="inline-link-macro-rx"></block>.</block>
   <block id="9eef93f992624bd8e7298c05ca77b7fa" category="paragraph">추정치를 얻으려면 ONTAP 클러스터를 NetApp Console 에 추가하고 클라우드 계층화 클러스터 페이지를 통해 검사하세요. 클러스터를 시작하려면 *잠재적 계층화 절감 계산*을 선택하세요.<block ref="f9f8011c8d4b0dcc7c11e9eaffe3ab07" category="inline-link-rx"></block> 얼마나 많은 돈을 절약할 수 있는지 확인해 보세요.</block>
   <block id="15a4c60a0f86c99eaac0eebe021afdfe" category="list-text"><block ref="15a4c60a0f86c99eaac0eebe021afdfe" category="inline-link-macro-rx"></block></block>
-  <block id="6c28a4f0eec0b4b8b7a2fd2b16db0bf0" category="paragraph">당신이 때<block ref="20b85fbda0982633cbcc10be992f4ea5" category="inline-link-macro-rx"></block> Cloud Tiering은 FabricPool 라이선스를 인식하고 해당 라이선스를 콘솔에 추가합니다. 해당 클러스터는 평소와 같이 데이터 계층화를 계속 진행합니다. FabricPool 라이선스가 만료되면 Cloud Tiering 라이선스를 구매해야 합니다.</block>
-  <block id="1bde59815d02b55060d6e8d13346a689" category="list-text"><block ref="7f252ad1d739a8ecccf6d5db96c80d7b" category="inline-link-macro-rx"></block>새로운 클러스터 또는 클러스터들에 필요한 용량을 위해서입니다.</block>
-  <block id="8ba93d5fbdf24a09ecf1780c63d1122d" category="list-text">클라우드 티어링에서<block ref="7e9f01463f0c1bdc0791002bcf190788" category="inline-link-macro-rx"></block> .</block>
   <block id="a3f4872361bc7d041bb3195ac8d2c127" category="paragraph">이 알림은 시스템 효율성을 개선하고 저장 비용을 줄이기 위한 "권장 사항"입니다. 이는 클러스터가 콜드 데이터의 20% 미만을 계층화하고 있음을 나타냅니다. 여기에는 데이터를 계층화하지 않는 클러스터도 포함됩니다. 링크를 제공합니다<block ref="42e4a442d762b5369e021e8b363199d3" category="inline-link-rx"></block> 비용 절감액을 계산하는 데 도움이 됩니다.</block>
   <block id="992d77728a30a0b6ec30278644a2aba6" category="paragraph">3.9.25 버전 이상을 사용하여 콘솔 에이전트를 생성한 경우 모든 준비가 완료된 것입니다. Azure 네트워크 내에서 리소스와 프로세스를 관리하는 데 필요한 권한을 에이전트에게 제공하는 사용자 지정 역할이 기본적으로 설정됩니다. 를 참조하십시오<block ref="f8b5fc8308ce6fe4ed8cf98ab578e96f" category="inline-link-rx"></block> 그리고<block ref="e1fd674ce022ebb18ca6d2753458c1ab" category="inline-link-rx"></block> .</block>
+  <block id="bde6bbfbb596382f506558c6bab1343b" category="paragraph">NetApp Cloud Tiering은 2026년 4월 26일부터 더 이상 구매하거나 라이선스를 갱신할 수 없습니다.</block>
+  <block id="bb94a9ffb3205557387f0b00f8e24dca" category="paragraph">기존 고객은 구독 또는 라이선스 계약이 만료될 때까지 NetApp Cloud Tiering을 계속 사용하고 지원을 받을 수 있습니다. 구독이 만료된 후에는 고객이 NetApp Cloud Tiering 기능이나 지원에 더 이상 액세스할 수 없습니다.</block>
+  <block id="f8a967869572457212675a5d470c728f" category="inline-link-macro">ONTAP 클러스터에 FabricPool 라이센스 설치</block>
+  <block id="f1a805b989e2fd716c6ed52db78b4c09" category="paragraph">NetApp에서는 고객이 NetApp 담당자와 협력하여 기존 계층화 라이센스를 ONTAP FabricPool 라이센스로 전환할 것을 권장합니다. 이 라이센스는 ONTAP에서 데이터 계층화 기능을 제공합니다. FabricPool을 사용하여 ONTAP에서 데이터 계층화를 설정하는 방법에 대한 자세한 내용은 <block ref="ecd46e7261f4b06a38f69686168fad8b" category="inline-link-macro-rx"></block>을 참조하십시오.</block>
+  <block id="d5b1e29a38c69118ebb52ddd25078a82" category="inline-link-macro">NetApp Cloud Tiering 사용 중단 안내</block>
+  <block id="3c1b98a4347b1e75ca57e51e43e141b2" category="list-text"><block ref="bc9f3746ee1a6c6e91093bc2b9ff13fb" category="inline-link-macro-rx"></block></block>
+  <block id="65afa52dc402fa4f804d1fad742f5b32" category="inline-link-macro">NetApp Cloud Tiering 공급 종료 FAQ</block>
+  <block id="91140b6bf054d442adb9178830663a05" category="list-text"><block ref="317d9243bec15035f876da17dbcf900e" category="inline-link-macro-rx"></block></block>
+  <block id="3eaabe1c9f6af35b08c69d2a08c539f7" category="paragraph">Cloud Tiering 라이센스는 IBM Cloud Object Storage로 데이터를 계층화하는 클러스터와 공유할 수도 있습니다. FabricPool 구성은 System Manager 또는 ONTAP CLI를 사용하여 설정해야 하지만<block ref="df7a2efda45472793208a56bceed9a6a" category="inline-link-macro-rx"></block></block>
+  <block id="d5b396b1c5d337663080cada3fbf93a9" category="paragraph"><block ref="cb03f4cf7a034ce9ccf8e59e75f88132" category="inline-link-macro-rx"></block>.</block>
+  <block id="c9f703238144b3bfd7bc67795b94fec8" category="paragraph">Cloud Tiering 라이센스를 구매한 후 NetApp Console에 라이센스를 추가해야 합니다. <block ref="d5683b1800dc170565d6b8ebe7ed8974" category="inline-link-macro-rx"></block>.</block>
+  <block id="a143d86f6236f76d3322acea76d2434b" category="admonition">2021년 8월부터 기존의 *FabricPool* 라이선스는 *Cloud Tiering* 라이선스로 대체되었습니다. <block ref="5fef56bc71b7561eeca0a8dd2ab51ead" category="inline-link-macro-rx"></block>.</block>
+  <block id="6600665c92651337976c584df2122a6a" category="paragraph">현재 Cloud Tiering 라이선스를 사용 중인 경우 Cloud Tiering 라이선스가 만료일 또는 최대 용량에 도달할 때까지는 영향을 받지 않습니다. 라이선스를 업데이트해야 할 때 또는 클라우드로 데이터를 계층화하는 기능에 중단이 발생하지 않도록 미리 NetApp에 문의하십시오.</block>
+  <block id="38fc1b337c0ea26463916fc2913205c1" category="paragraph"><block ref="38fc1b337c0ea26463916fc2913205c1" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="7019a39846e9a2c7f7a80eaba91e4a41" category="paragraph"><block ref="7019a39846e9a2c7f7a80eaba91e4a41" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="1d593c3f7480ada9580d93cd753c3f93" category="paragraph">이는 시스템에서 생성된 ID로, 사용자의 이메일 주소와 연결됩니다. *NSS 관리* 페이지의 <block ref="5444f6f0c3983523c8933a1864b2b390" category="inline-image-macro-rx" type="image"></block> 메뉴에서 사용자의 이메일 주소를 확인할 수 있습니다.</block>
+  <block id="872eaae7deb6035c20f9bfe6deefd03d" category="list-text">로그인 자격 증명 토큰을 갱신해야 하는 경우 <block ref="5444f6f0c3983523c8933a1864b2b390" category="inline-image-macro-rx" type="image"></block> 메뉴에 *자격 증명 업데이트* 옵션이 있습니다.</block>
+  <block id="403f4a170e2d1c03d329e0f0dd8d1b84" category="section-title">2026년 4월 13일</block>
 </blocks>

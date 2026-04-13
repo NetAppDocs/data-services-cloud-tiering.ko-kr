@@ -1,20 +1,6 @@
----
-sidebar: sidebar 
-permalink: task-licensing-cloud-tiering.html 
-keywords: subscribe, Fabricpool transition trial, marketplace, subscription, paygo, pay as you go, byol, bring your own license, annual, tiering, cloud tiering, license, cloud tiering 
-summary: NetApp Cloud Tiering은 2026년 4월 26일부터 더 이상 구매하거나 라이선스를 갱신할 수 없습니다. 
----
-= NetApp Cloud Tiering 에 대한 라이선싱 설정
-:hardbreaks:
+= 
 :allow-uri-read: 
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
 
-
-[role="lead"]
-NetApp Cloud Tiering은 2026년 4월 26일부터 더 이상 구매하거나 라이선스를 갱신할 수 없습니다.
 
 [NOTE]
 ====
@@ -29,4 +15,3 @@ NetApp에서는 고객이 NetApp 담당자와 협력하여 기존 계층화 라�
 
 
 ====
-현재 Cloud Tiering 라이선스를 사용 중인 경우 Cloud Tiering 라이선스가 만료일 또는 최대 용량에 도달할 때까지는 영향을 받지 않습니다. 라이선스를 업데이트해야 할 때 또는 클라우드로 데이터를 계층화하는 기능에 중단이 발생하지 않도록 미리 NetApp에 문의하십시오.

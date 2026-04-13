@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: task-tiering-onprem-overview.html 
-keywords: overview, tiering overview, tiered clusters, clusters enabled for tiering, data tiering overview, cold data, hot data, tiered data, savings, savings opportunities, saving opportunity, policies, cold snapshots, all dp user data, cold user data & snapshots, cold user data and snapshots, all user data, no policy, marketplace subscriptions, clusters associated 
+keywords: overview, tiering overview, tiered clusters, clusters enabled for tiering, data tiering overview, cold data, hot data, tiered data, savings, savings opportunities, saving opportunity, policies, cold snapshots, all dp user data, cold user data and snapshots, cold user data and snapshots, all user data, no policy, marketplace subscriptions, clusters associated 
 summary: 클라우드 티어링은 온프레미스 클러스터 각각의 데이터 티어링에 대한 집계된 보기를 제공합니다.  이 개요는 주변 환경에 대한 명확한 그림을 제공하고 적절한 조치를 취하는 데 도움이 됩니다. 
 ---
 = NetApp Cloud Tiering 에서 클러스터의 데이터 계층화 개요를 확인하세요.
