@@ -1,9 +1,11 @@
-= 
+= NetApp Cloud Tiering은 더 이상 제공되지 않습니다
 :allow-uri-read: 
 
 
-[NOTE]
-====
+
+
+=== NetApp Cloud Tiering은 더 이상 제공되지 않습니다
+
 NetApp Cloud Tiering은 2026년 4월 26일부터 더 이상 구매하거나 라이선스를 갱신할 수 없습니다.
 
 기존 고객은 구독 또는 라이선스 계약이 만료될 때까지 NetApp Cloud Tiering을 계속 사용하고 지원을 받을 수 있습니다. 구독이 만료된 후에는 고객이 NetApp Cloud Tiering 기능이나 지원에 더 이상 액세스할 수 없습니다.
@@ -13,5 +15,3 @@ NetApp에서는 고객이 NetApp 담당자와 협력하여 기존 계층화 라�
 * link:https://go.digital.netapp.com/rs/683-HWH-936/images/Cloud-Tiering-EOA-Notice2.pdf?version=0&mkt_tok=NjgzLUhXSC05MzYAAAGgvTOT_9L2PauNXYE0fOs0RIz8KK2q5Jb6sg8Yv-97NNJ53ceAab9UAqpKOrAvByxsOWqhIQHNCHgFfM0q3TI["NetApp Cloud Tiering 사용 중단 안내"]
 * link:https://go.digital.netapp.com/rs/683-HWH-936/images/Cloud-Tiering-EOA-FAQ-v3.pdf?version=0&mkt_tok=NjgzLUhXSC05MzYAAAGgvTOT_rplJe_ZtlY4PQAQRQlewsDa0W4JR55muT0KCThR46zI7-uOhIYfVsxODDKFrnYYvy5uZzvhEKHOwBI["NetApp Cloud Tiering 공급 종료 FAQ"]
 
-
-====
